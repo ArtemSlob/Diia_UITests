@@ -29,10 +29,5 @@ namespace Diia_UITests.POM
         {
             return _webDriver.FindElements(_servicesHeaderMenuDropDownLink)[0].Text;
         }
-
-        //internal void GoToMainPage()
-        //{
-        //    throw new NotImplementedException();
-        //}
     }
 }

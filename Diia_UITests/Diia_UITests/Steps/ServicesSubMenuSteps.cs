@@ -13,7 +13,6 @@ namespace Diia_UITests.Steps
         private readonly MainPage _mainPage;
         private readonly ServicePage _servicePage;
 
-
         public ServicesSubMenuSteps(ScenarioContext scenarioContext)
         {
             _scenarioContext = scenarioContext;
@@ -44,7 +43,6 @@ namespace Diia_UITests.Steps
         [Then(@"Page with title Довідки та витяги openes")]
         public void ThenPageWithTitleДовідкиТаВитягиOpenes()
         {
-
             Assert.AreEqual(_scenarioContext["TextFromServicesHeaderMenuFirstLink"], _servicePage.GetTextFromServicePageTitle());
         }
     }

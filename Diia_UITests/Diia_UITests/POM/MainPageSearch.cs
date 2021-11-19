@@ -41,19 +41,8 @@ namespace Diia_UITests.POM
                 .Click();
             return this;
         }
-        //public MainPageSearch InputSearchData(string input)
-        //{
-        //    _webDriver.FindElement(_searchField).SendKeys(input);
-        //    return this;
-        //}
 
-        //public void ClickToSearchButton()
-        //{
-        //    _webDriver.FindElement(_searchButton).Click();
-        //}
         public string ClickToSeachResult(string text) =>
             _webDriver.FindElement(_resultSearchText).Text;
-
-
     }
 }
