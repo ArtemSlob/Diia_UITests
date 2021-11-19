@@ -1,0 +1,21 @@
+diff a/Diia_UITests/Diia_UITests/Features/MainPage/PopularServices.feature b/Diia_UITests/Diia_UITests/Features/MainPage/PopularServices.feature	(rejected hunks)
+@@ -2,10 +2,10 @@
+ 	As a user
+ 	I want to see popular services on the main page
+ 	In order to find them faster
+-#
+-#Background:
+-#	Given Main page open
+-#
+-#Scenario: Check 
+-#	When I click on the Questions and answers
+-#	Then I navigate to the service page
+\ No newline at end of file
++
++Background:
++	Given Main page open
++
++Scenario: Check 
++	When I click on the Questions and answers
++	Then I navigate to the service page
+\ No newline at end of file
