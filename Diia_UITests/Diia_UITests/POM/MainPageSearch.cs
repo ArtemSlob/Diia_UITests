@@ -13,7 +13,7 @@ namespace Diia_UITests.POM
             _webDriver = webDriver;
         }
 
-        private readonly By _searchField = By.CssSelector("[class='input form - search_input']");
+        private readonly By _searchField = By.CssSelector("[class='input form-search_input']");
         private readonly By _searchButton = By.CssSelector("[input ='type=submit']");
         private readonly By _resultSearchText = By.CssSelector("[class='search_request-text']");
         private readonly By _closedCookies = By.CssSelector("[class='cookies-1_close']");

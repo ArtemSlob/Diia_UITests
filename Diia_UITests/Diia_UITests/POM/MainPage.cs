@@ -1,38 +1,38 @@
-﻿//using OpenQA.Selenium;
-//using System;
+﻿using OpenQA.Selenium;
+using System;
 
-//namespace Diia_UITests.POM
-//{
-//    class MainPage
-//    {
-//        private readonly IWebDriver _webDriver;
+namespace Diia_UITests.POM
+{
+    class MainPage
+    {
+        private readonly IWebDriver _webDriver;
 
-//        public MainPage(IWebDriver webDriver)
-//        {
-//            _webDriver = webDriver;
-//        }
-        
-//        private readonly By _servicesHeaderMenuDropDownLink = By.CssSelector("[data-menu-target='menu-sub-1']");
-//        private readonly By _servicesHeaderMenuLinks = By.CssSelector("div[id='menu-sub-1'] [class='menu-sub_list-item diia-animated']>a");
-       
-//        public void ClickOnServicesHeaderMenuFirstLink() 
-//        {
-//            _webDriver.FindElements(_servicesHeaderMenuDropDownLink)[0].Click();
-//        }
+        public MainPage(IWebDriver webDriver)
+        {
+            _webDriver = webDriver;
+        }
 
-//        public void ClickOnServicesHeaderMenuDropDownLink()
-//        {
-//            _webDriver.FindElement(_servicesHeaderMenuDropDownLink).Click();
-//        }
+        private readonly By _servicesHeaderMenuDropDownLink = By.CssSelector("[data-menu-target='menu-sub-1']");
+        private readonly By _servicesHeaderMenuLinks = By.CssSelector("div[id='menu-sub-1'] [class='menu-sub_list-item diia-animated']>a");
 
-//        public string GetTextFromServicesHeaderMenuFirstLink()
-//        {
-//            return _webDriver.FindElements(_servicesHeaderMenuDropDownLink)[0].Text;
-//        }
+        public void ClickOnServicesHeaderMenuFirstLink()
+        {
+            _webDriver.FindElements(_servicesHeaderMenuDropDownLink)[0].Click();
+        }
 
-//        //internal void GoToMainPage()
-//        //{
-//        //    throw new NotImplementedException();
-//        //}
-//    }
-//}
+        public void ClickOnServicesHeaderMenuDropDownLink()
+        {
+            _webDriver.FindElement(_servicesHeaderMenuDropDownLink).Click();
+        }
+
+        public string GetTextFromServicesHeaderMenuFirstLink()
+        {
+            return _webDriver.FindElements(_servicesHeaderMenuDropDownLink)[0].Text;
+        }
+
+        //internal void GoToMainPage()
+        //{
+        //    throw new NotImplementedException();
+        //}
+    }
+}
