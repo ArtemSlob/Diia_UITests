@@ -15,6 +15,12 @@ namespace Diia_UITests.POM
         private readonly By _servicesHeaderMenuDropDownLink = By.CssSelector("[data-menu-target='menu-sub-1']");
         private readonly By _servicesHeaderMenuLinks = By.CssSelector("div[id='menu-sub-1'] [class='menu-sub_list-item diia-animated']>a");
 
+        public MainPage GoToMainPage()
+        {
+            _webDriver.Navigate().GoToUrl("https://diia.gov.ua/");
+            return this;
+        }
+
         public void ClickOnServicesHeaderMenuFirstLink()
         {
             _webDriver.FindElements(_servicesHeaderMenuDropDownLink)[0].Click();

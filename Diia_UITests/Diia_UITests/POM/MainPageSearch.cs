@@ -14,7 +14,7 @@ namespace Diia_UITests.POM
         }
 
         private readonly By _searchField = By.CssSelector("[class='input form-search_input']");
-        private readonly By _searchButton = By.CssSelector("[input ='type=submit']");
+        private readonly By _searchButton = By.CssSelector("[class='btn btn_search-main']");
         private readonly By _resultSearchText = By.CssSelector("[class='search_request-text']");
         private readonly By _closedCookies = By.CssSelector("[class='cookies-1_close']");
 
@@ -23,6 +23,7 @@ namespace Diia_UITests.POM
             _webDriver.Navigate().GoToUrl("https://diia.gov.ua/");
             return this;
         }
+
         public MainPageSearch EnterDataForSearch(string input)
         {
             _webDriver
