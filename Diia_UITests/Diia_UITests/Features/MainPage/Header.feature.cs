@@ -20,23 +20,26 @@ namespace Diia_UITests.Features.MainPage
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("ServicesSubMenu")]
-    public partial class ServicesSubMenuFeature
+    [NUnit.Framework.DescriptionAttribute("Header")]
+    [NUnit.Framework.CategoryAttribute("header")]
+    public partial class HeaderFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-        private string[] _featureTags = ((string[])(null));
+        private string[] _featureTags = new string[] {
+                "header"};
         
-#line 1 "ServicesSubMenu.feature"
+#line 1 "Header.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features/MainPage", "ServicesSubMenu", "As a user\r\nI want see full list of services in the header of main page\r\nIn order " +
-                    "to find fast the service I need", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features/MainPage", "Header", "As a user\r\nI want the header on the site\r\nIn order to access the main services of" +
+                    " the site", ProgrammingLanguage.CSharp, new string[] {
+                        "header"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -76,23 +79,51 @@ namespace Diia_UITests.Features.MainPage
         
         public virtual void FeatureBackground()
         {
-#line 6
-#line hidden
 #line 7
-testRunner.Given("Main page is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 8
+ testRunner.Given("Main page is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Check services sub menu appearence in header")]
+        [NUnit.Framework.DescriptionAttribute("Check the ability to open the Service page using the link in the header services " +
+            "section")]
+        [NUnit.Framework.CategoryAttribute("header")]
+        [NUnit.Framework.CategoryAttribute("headermenu")]
         [NUnit.Framework.CategoryAttribute("services")]
-        public virtual void CheckServicesSubMenuAppearenceInHeader()
+        [NUnit.Framework.TestCaseAttribute("Довідки та витяги", null)]
+        [NUnit.Framework.TestCaseAttribute("Навколишнє середовище", null)]
+        [NUnit.Framework.TestCaseAttribute("Безпека та правопорядок", null)]
+        [NUnit.Framework.TestCaseAttribute("Сім’я", null)]
+        [NUnit.Framework.TestCaseAttribute("Підприємництво", null)]
+        [NUnit.Framework.TestCaseAttribute("Транспорт", null)]
+        [NUnit.Framework.TestCaseAttribute("Земля, будівництво, нерухомість", null)]
+        [NUnit.Framework.TestCaseAttribute("Ліцензії та дозволи", null)]
+        [NUnit.Framework.TestCaseAttribute("Здоров\'я", null)]
+        [NUnit.Framework.TestCaseAttribute("Пенсії, пільги та допомога", null)]
+        [NUnit.Framework.TestCaseAttribute("Земля, будівництво, нерухомість", null)]
+        [NUnit.Framework.TestCaseAttribute("Ліцензії та дозволи", null)]
+        [NUnit.Framework.TestCaseAttribute("Транспорт", null)]
+        [NUnit.Framework.TestCaseAttribute("Медицина та фармацевтика", null)]
+        [NUnit.Framework.TestCaseAttribute("Витяги та довідки", null)]
+        [NUnit.Framework.TestCaseAttribute("Створення бізнесу", null)]
+        public virtual void CheckTheAbilityToOpenTheServicePageUsingTheLinkInTheHeaderServicesSection(string text, string[] exampleTags)
         {
-            string[] tagsOfScenario = new string[] {
+            string[] @__tags = new string[] {
+                    "header",
+                    "headermenu",
                     "services"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check services sub menu appearence in header", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 10
+            argumentsOfScenario.Add("Text", text);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check the ability to open the Service page using the link in the header services " +
+                    "section", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 11
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -112,17 +143,17 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 6
+#line 7
 this.FeatureBackground();
 #line hidden
-#line 11
-  testRunner.When("I click Послуги item on header menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 12
+ testRunner.When("I click Services list on header menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 13
-  testRunner.When("I click first item Довідки та витяги from the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("I click {0} from Services list", text), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 14
-  testRunner.Then("Page with title Довідки та витяги openes", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("Page with title {0} opens", text), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
