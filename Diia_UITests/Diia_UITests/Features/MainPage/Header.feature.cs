@@ -87,13 +87,28 @@ namespace Diia_UITests.Features.MainPage
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Check the ability to open the Service page using the link in the header services " +
-            "section")]
+        [NUnit.Framework.DescriptionAttribute("Check the ability to open the Service pages using the link in the header services" +
+            " section")]
         [NUnit.Framework.CategoryAttribute("header")]
         [NUnit.Framework.CategoryAttribute("headermenu")]
         [NUnit.Framework.CategoryAttribute("services")]
         [NUnit.Framework.TestCaseAttribute("Довідки та витяги", null)]
-        public virtual void CheckTheAbilityToOpenTheServicePageUsingTheLinkInTheHeaderServicesSection(string text, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("Навколишнє середовище", null)]
+        [NUnit.Framework.TestCaseAttribute("Безпека та правопорядок", null)]
+        [NUnit.Framework.TestCaseAttribute("Сім’я", null)]
+        [NUnit.Framework.TestCaseAttribute("Підприємництво", null)]
+        [NUnit.Framework.TestCaseAttribute("Транспорт", null)]
+        [NUnit.Framework.TestCaseAttribute("Земля, будівництво, нерухомість", null)]
+        [NUnit.Framework.TestCaseAttribute("Ліцензії та дозволи", null)]
+        [NUnit.Framework.TestCaseAttribute("Здоров\'я", null)]
+        [NUnit.Framework.TestCaseAttribute("Пенсії, пільги та допомога", null)]
+        [NUnit.Framework.TestCaseAttribute("Земля, будівництво, нерухомість", null)]
+        [NUnit.Framework.TestCaseAttribute("Ліцензії та дозволи", null)]
+        [NUnit.Framework.TestCaseAttribute("Транспорт", null)]
+        [NUnit.Framework.TestCaseAttribute("Медицина та фармацевтика", null)]
+        [NUnit.Framework.TestCaseAttribute("Витяги та довідки", null)]
+        [NUnit.Framework.TestCaseAttribute("Створення бізнесу", null)]
+        public virtual void CheckTheAbilityToOpenTheServicePagesUsingTheLinkInTheHeaderServicesSection(string servicesSubMenuLinkText, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "header",
@@ -105,9 +120,9 @@ namespace Diia_UITests.Features.MainPage
             }
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Text", text);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check the ability to open the Service page using the link in the header services " +
-                    "section", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            argumentsOfScenario.Add("ServicesSubMenuLinkText", servicesSubMenuLinkText);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check the ability to open the Service pages using the link in the header services" +
+                    " section", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 11
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -132,13 +147,13 @@ this.ScenarioInitialize(scenarioInfo);
 this.FeatureBackground();
 #line hidden
 #line 12
- testRunner.When("I click Services list on header menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I click the link \'Послуги\' in the header menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 13
- testRunner.When(string.Format("I click {0} from Services list", text), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("I click link {0} from Services list", servicesSubMenuLinkText), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 14
- testRunner.Then(string.Format("Page with title {0} opens", text), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("Page with title {0} opens", servicesSubMenuLinkText), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -181,13 +196,158 @@ this.ScenarioInitialize(scenarioInfo);
 this.FeatureBackground();
 #line hidden
 #line 37
- testRunner.When("I click Services list on header menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I click the link \'Послуги\' in the header menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 38
  testRunner.When("I click on an area outside the header menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 39
  testRunner.Then("The header pop-up menu collapses", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Check the closing of the pop-up header menu by clicking on the button that opened" +
+            " the menu")]
+        [NUnit.Framework.CategoryAttribute("header")]
+        [NUnit.Framework.CategoryAttribute("headermenu")]
+        public virtual void CheckTheClosingOfThePop_UpHeaderMenuByClickingOnTheButtonThatOpenedTheMenu()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "header",
+                    "headermenu"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check the closing of the pop-up header menu by clicking on the button that opened" +
+                    " the menu", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 42
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 7
+this.FeatureBackground();
+#line hidden
+#line 43
+ testRunner.When("I click the link \'Послуги\' in the header menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 44
+ testRunner.When("I click the link \'Послуги\' in the header menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 45
+ testRunner.Then("The header pop-up menu collapses", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Check the ability to open the News page using the links in the header menu sectio" +
+            "n")]
+        [NUnit.Framework.CategoryAttribute("header")]
+        [NUnit.Framework.CategoryAttribute("headermenu")]
+        [NUnit.Framework.CategoryAttribute("news")]
+        public virtual void CheckTheAbilityToOpenTheNewsPageUsingTheLinksInTheHeaderMenuSection()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "header",
+                    "headermenu",
+                    "news"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check the ability to open the News page using the links in the header menu sectio" +
+                    "n", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 48
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 7
+this.FeatureBackground();
+#line hidden
+#line 49
+ testRunner.When("I click the link \'Новини\' in the header menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 50
+ testRunner.Then("The News page with title \'Новини\' opens", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Check the ability to open the Faq page using the links in the header menu section" +
+            "")]
+        [NUnit.Framework.CategoryAttribute("header")]
+        [NUnit.Framework.CategoryAttribute("headermenu")]
+        [NUnit.Framework.CategoryAttribute("faq")]
+        public virtual void CheckTheAbilityToOpenTheFaqPageUsingTheLinksInTheHeaderMenuSection()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "header",
+                    "headermenu",
+                    "faq"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check the ability to open the Faq page using the links in the header menu section" +
+                    "", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 53
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 7
+this.FeatureBackground();
+#line hidden
+#line 54
+ testRunner.When("I click the link \'Питання та відповіді\' in the header menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 55
+ testRunner.Then("The Faq page with title \'Поширені запитання\' opens", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

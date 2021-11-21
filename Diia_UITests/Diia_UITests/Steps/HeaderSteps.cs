@@ -11,12 +11,16 @@ namespace Diia_UITests.Steps
         private readonly ScenarioContext _scenarioContext;
         private readonly IWebDriver _webDriver;
         private readonly MainPage _mainPage;
+        private readonly NewsPage _newsPage;
+        private readonly FaqPage _faqPage;
 
         public HeaderSteps(ScenarioContext scenarioContext)
         {
             _scenarioContext = scenarioContext;
             _webDriver = _scenarioContext.Get<IWebDriver>("WebDriver");
             _mainPage = new MainPage(_webDriver);
+            _newsPage = new NewsPage(_webDriver);
+            _faqPage = new FaqPage(_webDriver);
         }
 
         [Given(@"Main page is open")]
@@ -25,34 +29,46 @@ namespace Diia_UITests.Steps
             _mainPage.GoToMainPage();
         }
 
-        [When(@"I click Services list on header menu")]
-        public void WhenIClickServicesListOnHeaderMenu()
-        {
-            _mainPage.ClickOnServicesHeaderMenuDropDownLink();
-        }
-
-        [When(@"I click (.*) from Services list")]
+        [When(@"I click link (.*) from Services list")]
         public void WhenIClickFromServicesList(string linkText)
         {
             _mainPage.ClickOnServicesHeaderMenuLink(linkText);
         }
 
-        [Then(@"Page with title (.*) opens")]
-        public void ThenPageWithTitleOpens(string linkText)
-        {
-            Assert.AreEqual(linkText, _mainPage.GetTextFromServicePageTitle());
-        }
-
         [When(@"I click on an area outside the header menu")]
         public void WhenIClickOnAnAreaOutsideTheHeaderMenu()
         {
-            _mainPage.ClickOnMainSection();
+            _mainPage.ClickOnChatbotButtonSection();
+        }
+
+        [When(@"I click the link '(.*)' in the header menu")]
+        public void WhenIClickTheLinkInTheHeaderMenu(string linkText)
+        {
+            _mainPage.ClickOnHeaderMenuLink(linkText);
         }
 
         [Then(@"The header pop-up menu collapses")]
         public void ThenTheHeaderPop_UpMenuCollapses()
         {
             Assert.AreEqual("inactive", _mainPage.CheckActivenessOfMenu());
+        }
+
+        [Then(@"Page with title (.*) opens")]
+        public void ThenPageWithTitleOpens(string titleText)
+        {
+            Assert.AreEqual(titleText, _mainPage.GetTextFromPageTitle());
+        }
+
+        [Then(@"The News page with title '(.*)' opens")]
+        public void ThenTheNewsPageWithTitleOpens(string titleText)
+        {
+            Assert.AreEqual(titleText, _newsPage.GetTextFromPageTitle());
+        }
+
+        [Then(@"The Faq page with title '(.*)' opens")]
+        public void ThenTheFaqPageWithTitleOpens(string titleText)
+        {
+            Assert.AreEqual(titleText, _faqPage.GetTextFromPageTitle());
         }
 
     }

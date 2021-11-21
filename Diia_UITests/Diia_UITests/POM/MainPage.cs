@@ -21,8 +21,9 @@ namespace Diia_UITests.POM
 
         private readonly By _servicesHeaderMenuDropDownLink = By.CssSelector("[data-menu-target='menu-sub-1']");
         private readonly By _servicesHeaderMenuLinks = By.CssSelector("div[id='menu-sub-1'] [class='menu-sub_list-item diia-animated']>a");
-        private readonly By _servicePageTitle = By.CssSelector("h1");
+        private readonly By _pageTitle = By.CssSelector("h1");
         private readonly By _chatbotButton = By.CssSelector("[id='chatbot_btn']");
+        private readonly By _headerMenuLinksList = By.CssSelector("ul[class='menu_list']>li");
 
         public MainPage GoToMainPage()
         {
@@ -30,9 +31,16 @@ namespace Diia_UITests.POM
             return this;
         }
 
-        public void ClickOnServicesHeaderMenuDropDownLink()
+        public void ClickOnHeaderMenuLink(string linkText)
         {
-            _webDriver.FindElement(_servicesHeaderMenuDropDownLink).Click();
+            foreach (IWebElement link in _webDriver.FindElements(_headerMenuLinksList))
+            {
+                if (link.Text == linkText)
+                {
+                    link.Click();
+                    break;
+                }
+            }
         }
 
         public void ClickOnServicesHeaderMenuLink(string linkText)
@@ -48,12 +56,12 @@ namespace Diia_UITests.POM
             }
         }
 
-        public string GetTextFromServicePageTitle()
+        public string GetTextFromPageTitle()
         {
-            return _webDriver.FindElement(_servicePageTitle).Text;
+            return _webDriver.FindElement(_pageTitle).Text;
         }
 
-        public void ClickOnMainSection()
+        public void ClickOnChatbotButtonSection()
         {
             _action.MoveToElement(_webDriver.FindElement(_chatbotButton)).Click().Perform();
         }
