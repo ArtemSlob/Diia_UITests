@@ -40,11 +40,16 @@ namespace Diia_UITests.Steps
             _mainPage.SearchButtonClick();
         }
 
-        [Then(@"I see a shearch result page whith text '(.*)'")]
-        public void ThenISeeAShearchResultPageWhithText(string text)
+        [Then(@"I see a search result page whith text '(.*)'")]
+        public void ThenISeeASearchResultPageWhithText(string text)  
         {
-            _searchResult.GetToSeachResult(text);
-            Assert.AreEqual(text, "За вашим запитом знайдено матеріалів:");
+            Assert.AreEqual(text, _searchResult.GetToSeachResult());
+        }
+
+        [Then(@"I see a empty search result page whith text '(.*)'")]
+        public void ThenISeeAEmptySearchResultPageWhithText(string text)
+        {
+            Assert.AreEqual(text, _searchResult.GetToEmptyMessageResult());
         }
     }
 }

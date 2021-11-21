@@ -11,12 +11,11 @@ Background:
 Scenario: Check the search results with valid input
 	When I input 'Відкрити ФОП' in the search field
 	When I click the search button
-	Then I see a search result page whith text 'За вашим запитом знайдено матеріалів:'
+	Then I see a search result page whith text 'За вашим запитом знайдено матеріалів: 16'
 
-#	@Invalid
-#Scenario: Check the search with no result
-#	When I input 'invalid input 666' in the search field
-#	When I click the search button
-#	Then I see a search result page whith text 'За вашим запитом не знайдено матеріалів'
-#
-#
+	@Invalid
+Scenario: Check the search with no result
+	When I input 'iasdfds26' in the search field
+	When I click the search button
+	Then I see a empty search result page whith text 'За вашим запитом не знайдено матеріалів'
+
