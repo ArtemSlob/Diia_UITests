@@ -1,9 +1,10 @@
 ﻿using Diia_UITests.POM;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using System;
 using TechTalk.SpecFlow;
 
-namespace Diia_UITests.Features.MainPage
+namespace Diia_UITests.Steps
 {
     [Binding]
     public class SearchSteps
@@ -11,12 +12,14 @@ namespace Diia_UITests.Features.MainPage
         private readonly ScenarioContext _scenarioContext;
         private readonly IWebDriver _webDriver;
         private readonly MainPage _mainPage;
-        
+        private readonly SearchResult _searchResult;
+
         public SearchSteps(ScenarioContext scenarioContext)
         {
             _scenarioContext = scenarioContext;
             _webDriver = _scenarioContext.Get<IWebDriver>("WebDriver");
             _mainPage = new MainPage(_webDriver);
+            _searchResult = new SearchResult(_webDriver);
         }
 
         [Given(@"Main page open")]
@@ -40,7 +43,8 @@ namespace Diia_UITests.Features.MainPage
         [Then(@"I see a shearch result page whith text '(.*)'")]
         public void ThenISeeAShearchResultPageWhithText(string text)
         {
-            _mainPage.ClickToSeachResult(text);
+            _searchResult.GetToSeachResult(text);
+            Assert.AreEqual(text,"За вашим запитом знайдено матеріалів:");
         }
     }
 }

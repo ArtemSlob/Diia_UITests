@@ -18,3 +18,5 @@ Scenario: Check the search results with valid input
 #	When I input 'invalid input 666' in the search field
 #	When I click the search button
 #	Then I see a shearch result page whith text 'За вашим запитом не знайдено матеріалів'
+
+
