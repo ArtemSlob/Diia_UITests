@@ -52,6 +52,8 @@ namespace Diia_UITests.Features
             Assert.AreEqual(text, _searchResult.GetToSeachResult());
         }
 
+        // Этот тот вариант который предложила программа, сверху переделанный.
+
         //[Then(@"I see a search results page with the text ""(.*)""")]
         //public void ThenISeeASearchResultsPageWithTheText(string p0)
         //{

@@ -16,8 +16,8 @@ namespace Diia_UITests.POM
             _webDriver = webDriver;
         }
 
-        private readonly By _formSearch = By.CssSelector("[class='input form-search-sm_input']");
-        private readonly By _searchButton = By.CssSelector("[class='input form-search-sm_input']");
+        private readonly By _formSearch = By.CssSelector("[class='input_form-search-sm_input']");
+        private readonly By _searchButton = By.CssSelector("[class='header_sign-search_icn_search js-header_sign-search']");
         private readonly By _searchFormButton = By.CssSelector("[class='btn_form-search-sm_btn']");
 
         public Covid19 GoToCovid19Page()
