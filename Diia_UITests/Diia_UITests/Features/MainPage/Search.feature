@@ -1,8 +1,8 @@
-﻿@MainPage @Search
-Feature: Search
-	As a user
-	I want to search for information on the main page
-	In order to find needed information
+﻿#@MainPage @Search
+#Feature: Search
+#	As a user
+#	I want to search for information on the main page
+#	In order to find needed information
 #
 #Background: 
 #	Given main page open

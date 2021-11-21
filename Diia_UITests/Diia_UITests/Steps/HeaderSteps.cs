@@ -42,5 +42,18 @@ namespace Diia_UITests.Steps
         {
             Assert.AreEqual(linkText, _mainPage.GetTextFromServicePageTitle());
         }
+
+        [When(@"I click on an area outside the header menu")]
+        public void WhenIClickOnAnAreaOutsideTheHeaderMenu()
+        {
+            _mainPage.ClickOnMainSection();
+        }
+
+        [Then(@"The header pop-up menu collapses")]
+        public void ThenTheHeaderPop_UpMenuCollapses()
+        {
+            Assert.AreEqual("inactive", _mainPage.CheckActivenessOfMenu());
+        }
+
     }
 }

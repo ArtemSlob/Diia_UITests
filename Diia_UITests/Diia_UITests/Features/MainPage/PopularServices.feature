@@ -1,7 +1,7 @@
-﻿Feature: PopularServices
-	As a user
-	I want to see popular services on the main page
-	In order to find them faster
+﻿#Feature: PopularServices
+#	As a user
+#	I want to see popular services on the main page
+#	In order to find them faster
 #
 #Background:
 #	Given Main page open
