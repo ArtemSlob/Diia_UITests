@@ -27,24 +27,24 @@ namespace Diia_UITests.Steps
         {
             _mainPage.GoToMainPage();
         }
-        
+
         [When(@"I input '(.*)' in the search field")]
         public void WhenIInputInTheSearchField(string input)
         {
             _mainPage.EnterDataForSearch(input);
         }
-        
+
         [When(@"I click the search button")]
         public void WhenIClickTheSearchButton()
         {
             _mainPage.SearchButtonClick();
         }
-        
+
         [Then(@"I see a shearch result page whith text '(.*)'")]
         public void ThenISeeAShearchResultPageWhithText(string text)
         {
             _searchResult.GetToSeachResult(text);
-            Assert.AreEqual(text,"За вашим запитом знайдено матеріалів:");
+            Assert.AreEqual(text, "За вашим запитом знайдено матеріалів:");
         }
     }
 }

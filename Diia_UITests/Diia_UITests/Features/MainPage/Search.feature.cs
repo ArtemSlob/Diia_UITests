@@ -128,7 +128,7 @@ this.FeatureBackground();
  testRunner.When("I click the search button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 14
- testRunner.Then("I see a shearch result page whith text \'За вашим запитом знайдено матеріалів:\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I see a search result page whith text \'За вашим запитом знайдено матеріалів:\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
