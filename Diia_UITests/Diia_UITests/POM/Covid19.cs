@@ -16,7 +16,7 @@ namespace Diia_UITests.POM
             _webDriver = webDriver;
         }
 
-        private readonly By _searchField = By.CssSelector("[class='input form-search-sm_input']");
+        private readonly By _searchField = By.CssSelector("[class='input form-search-sm_input']"); //   input form-search_input
         private readonly By _searchButtonActivation = By.CssSelector("[class='header_sign-search icn_search js-header_sign-search']");
         private readonly By _searchFormButton = By.CssSelector("[class='btn form-search-sm_btn']");
 

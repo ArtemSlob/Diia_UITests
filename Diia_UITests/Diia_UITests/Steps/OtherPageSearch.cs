@@ -52,5 +52,11 @@ namespace Diia_UITests.Features
         {
             Assert.AreEqual(text, _searchResult.GetToSeachResult());
         }
+
+        [Then(@"I see a empty search result page whith the text ""(.*)""")]
+        public void ThenISeeAEmptySearchResultPageWhithTheText(string text)
+        {
+            Assert.AreEqual(text, _searchResult.GetToEmptyMessageResult());
+        }
     }
 }
