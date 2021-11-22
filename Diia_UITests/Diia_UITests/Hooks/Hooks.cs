@@ -18,7 +18,7 @@ namespace Diia_UITests
             _scenarioContext = scenarioContext;
         }
 
-        [BeforeScenario("header")]
+        [BeforeScenario()]
         public void BeforeScenario()
         {
             ChromeOptions options = new ChromeOptions();

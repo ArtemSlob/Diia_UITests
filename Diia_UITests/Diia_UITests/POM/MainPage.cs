@@ -21,6 +21,9 @@ namespace Diia_UITests.POM
 
         private readonly By _servicesHeaderMenuDropDownLink = By.CssSelector("[data-menu-target='menu-sub-1']");
         private readonly By _servicesHeaderMenuLinks = By.CssSelector("div[id='menu-sub-1'] [class='menu-sub_list-item diia-animated']>a");
+        private readonly By _searchField = By.CssSelector("[class='input form-search_input']");
+        private readonly By _searchButton = By.CssSelector("[class='btn btn_search-main']");
+        private readonly By _headerTitle = By.CssSelector("[class='header_title']");
         private readonly By _pageTitle = By.CssSelector("h1");
         private readonly By _chatbotButton = By.CssSelector("[id='chatbot_btn']");
         private readonly By _headerMenuLinksList = By.CssSelector("ul[class='menu_list']>li");
@@ -56,6 +59,42 @@ namespace Diia_UITests.POM
             }
         }
 
+        public void ClickOnServicesHeaderMenuFirstLink()
+        {
+            _webDriver.FindElements(_servicesHeaderMenuDropDownLink)[0].Click();
+        }
+
+        public void ClickOnServicesHeaderMenuDropDownLink()
+        {
+            _webDriver.FindElement(_servicesHeaderMenuDropDownLink).Click();
+        }
+
+        public string GetTextFromServicesHeaderMenuFirstLink()
+        {
+            return _webDriver.FindElements(_servicesHeaderMenuDropDownLink)[0].Text;
+        }
+
+        public MainPage EnterDataForSearch(string input)
+        {
+            _webDriver
+                .FindElement(_searchField)
+                .SendKeys(input);
+            return this;
+        }
+
+        public MainPage SearchButtonClick()
+        {
+            _webDriver
+                .FindElement(_searchButton)
+                .Click();
+            return this;
+        }
+
+        public string GetTextFromHeaderTitle()
+        {
+            return _webDriver.FindElement(_headerTitle).Text;
+        }
+
         public string GetTextFromPageTitle()
         {
             return _webDriver.FindElement(_pageTitle).Text;
@@ -67,7 +106,7 @@ namespace Diia_UITests.POM
         }
 
         public string CheckActivenessOfMenu()
-        {            
+        {
             return _webDriver.FindElement(_servicesHeaderMenuDropDownLink).GetAttribute("class").Contains("active") ? "active" : "inactive";
         }
     }
