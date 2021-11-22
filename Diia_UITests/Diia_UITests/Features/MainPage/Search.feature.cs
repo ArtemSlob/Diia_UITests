@@ -135,14 +135,14 @@ this.FeatureBackground();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Check the search with no result")]
+        [NUnit.Framework.DescriptionAttribute("Check the search with invalid input")]
         [NUnit.Framework.CategoryAttribute("Invalid")]
-        public virtual void CheckTheSearchWithNoResult()
+        public virtual void CheckTheSearchWithInvalidInput()
         {
             string[] tagsOfScenario = new string[] {
                     "Invalid"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check the search with no result", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check the search with invalid input", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 17
 this.ScenarioInitialize(scenarioInfo);
 #line hidden

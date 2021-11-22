@@ -4,18 +4,19 @@ Feature: Search
 	I want to search for information on the main page
 	In order to find needed information
 
-Background: 
+Background:
 	Given Covid page open
 
 @Valid
 Scenario: check your search results with valid data on the covid19 page
-When I click on the search button
-When I input "Відкрити ФОП" in the search field
-When I click the search button on other pages
-Then I see a search results page with the text "За вашим запитом знайдено матеріалів: 16"
+	When I click on the search button
+	When I input "Відкрити ФОП" in the search field
+	When I click the search button on other pages
+	Then I see a search results page with the text "За вашим запитом знайдено матеріалів: 16"
 
-#	@Invalid
+#@Invalid
 #Scenario: Check the search with no result
+#	When I click on the search button
 #	When I input 'iasdfds26' in the search field
-#	When I click the search button
+#	When I click the search button on other pages
 #	Then I see a empty search result page whith text 'За вашим запитом не знайдено матеріалів'
