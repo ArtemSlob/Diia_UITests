@@ -1,7 +1,6 @@
 ﻿using Diia_UITests.POM;
 using NUnit.Framework;
 using OpenQA.Selenium;
-using System;
 using TechTalk.SpecFlow;
 
 namespace Diia_UITests.Features
@@ -54,7 +53,7 @@ namespace Diia_UITests.Features
         }
 
         [Then(@"I see a empty search result page whith the text ""(.*)""")]
-        public void ThenISeeAEmptySearchResultPageWhithTheText(string text)
+        public void ThenISeeAEmptySearchResultPageWhithText(string text)
         {
             Assert.AreEqual(text, _searchResult.GetToEmptyMessageResult());
         }
