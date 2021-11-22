@@ -18,14 +18,14 @@ namespace Diia_UITests
             _scenarioContext = scenarioContext;
         }
 
-        [BeforeScenario()]
+        [BeforeScenario]
         public void BeforeScenario()
         {
             ChromeOptions options = new ChromeOptions();
             options.AddArgument("--start-maximized");
 
             new DriverManager().SetUpDriver(new ChromeConfig(), VersionResolveStrategy.MatchingBrowser);
-            var driver = new ChromeDriver(options);
+            ChromeDriver driver = new ChromeDriver(options);
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
             driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(60);
 
