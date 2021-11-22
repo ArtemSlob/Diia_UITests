@@ -16,7 +16,7 @@ namespace Diia_UITests.POM
         private readonly By _servicesHeaderMenuLinks = By.CssSelector("div[id='menu-sub-1'] [class='menu-sub_list-item diia-animated']>a");
         private readonly By _searchField = By.CssSelector("[class='input form-search_input']");
         private readonly By _searchButton = By.CssSelector("[class='btn btn_search-main']");
-        private readonly By _headerTitle = By.CssSelector("[class='header_title]']");
+        private readonly By _headerTitle = By.CssSelector("[class='header_title']");
 
         public MainPage GoToMainPage()
         {
@@ -57,7 +57,7 @@ namespace Diia_UITests.POM
 
         public string GetTextFromHeaderTitle()
         {
-            return _webDriver.FindElements(_headerTitle)[0].Text;
+            return _webDriver.FindElement(_headerTitle).Text;
         }
     }
 }

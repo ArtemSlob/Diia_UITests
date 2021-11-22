@@ -22,7 +22,7 @@ namespace Diia_UITests.Features
             _searchResult = new SearchResult(_webDriver);
         }
 
-        [Given(@"Covid(.*) page open")]
+        [Given(@"Covid page open")]
         public void GivenCovidPageOpen()
         {
             _covid19.GoToCovid19Page();
@@ -31,33 +31,26 @@ namespace Diia_UITests.Features
         [When(@"I click on the search button")]
         public void WhenIClickOnTheSearchButton()
         {
-            _covid19.ButtonSearchClick();
+            _covid19.ButtonSearchActivationClick();
         }
 
-        [When(@"I input '(.*)' in the search field")]
+       
+        [When(@"I input ""(.*)"" in the search field")]
         public void WhenIInputInTheSearchField(string input)
         {
             _covid19.EnterDataForFormSearch(input);
         }
 
-        [When(@"I click the search button")]
-        public void WhenIClickTheSearchButton()
+        [When(@"I click the search button on other pages")]
+        public void WhenIClickTheSearchButtonOnOtherPeges()
         {
             _covid19.SearchButtonClick();
         }
 
-        [Then(@"I see a search result page whith text '(.*)'")]
+        [Then(@"I see a search results page with the text ""(.*)""")]
         public void ThenISeeASearchResultPageWhithText(string text)
         {
             Assert.AreEqual(text, _searchResult.GetToSeachResult());
         }
-
-        // Этот тот вариант который предложила программа, сверху переделанный.
-
-        //[Then(@"I see a search results page with the text ""(.*)""")]
-        //public void ThenISeeASearchResultsPageWithTheText(string p0)
-        //{
-        //    ScenarioContext.Current.Pending();
-        //}
     }
 }

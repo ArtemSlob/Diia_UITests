@@ -51,5 +51,11 @@ namespace Diia_UITests.Steps
         {
             Assert.AreEqual(text, _searchResult.GetToEmptyMessageResult());
         }
+
+        [Then(@"I see that the page has '(.*)' title")]
+        public void ThenISeeThatThePageHasNot(string titleText)
+        {
+            Assert.AreEqual(titleText, _mainPage.GetTextFromHeaderTitle());
+        }
     }
 }
