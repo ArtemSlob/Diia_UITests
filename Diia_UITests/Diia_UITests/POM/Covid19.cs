@@ -14,6 +14,7 @@ namespace Diia_UITests.POM
         private readonly By _searchField = By.CssSelector("[class='input form-search-sm_input']"); 
         private readonly By _searchButtonActivation = By.CssSelector("[class='header_sign-search icn_search js-header_sign-search']");
         private readonly By _searchFormButton = By.CssSelector("[class='btn form-search-sm_btn']");
+        private readonly By _covid19Title = By.CssSelector("[class='service-type_title']");
 
         public Covid19 GoToCovid19Page()
         {
@@ -43,6 +44,11 @@ namespace Diia_UITests.POM
                 .FindElement(_searchFormButton)
                 .Click();
             return this;
+        }
+
+        public string GetTextFromPageCovid19Title()
+        {
+            return _webDriver.FindElement(_covid19Title).Text;
         }
     }
 }
