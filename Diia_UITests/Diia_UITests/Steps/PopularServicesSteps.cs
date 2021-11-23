@@ -21,6 +21,30 @@ namespace Diia_UITests.Steps
             _covid19 = new Covid19(_webDriver);
         }
 
+        [When(@"I click on the swiper next button")]
+        public void WhenIClickOnTheSwiperNextButton()
+        {
+            _mainPage.ClickOnSwiperNextButton();
+        }
+
+        [Then(@"The popular services moved by one position right")]
+        public void ThenThePopularServicesMovedByOnePositionRight()
+        {
+            Assert.IsTrue(!_mainPage.CheckActivenessOfFirstPopularServiceBlock());
+        }
+
+        [When(@"I click on the swiper previous button")]
+        public void WhenIClickOnTheSwiperPreviousButton()
+        {
+            _mainPage.ClickOnSwiperPreviousButton();
+        }
+
+        [Then(@"The popular services moved by one position left")]
+        public void ThenThePopularServicesMovedByOnePositionLeft()
+        {
+            Assert.IsTrue(_mainPage.CheckActivenessOfFirstPopularServiceBlock());
+        }
+
         [When(@"I click the covid service in the item field")]
         public void WhenIClickTheItemInTheItemField()
         {
