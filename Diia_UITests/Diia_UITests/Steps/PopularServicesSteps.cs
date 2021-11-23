@@ -21,7 +21,7 @@ namespace Diia_UITests.Steps
             _covid19 = new Covid19(_webDriver);
         }
 
-        [When(@"I click the covid servece in the item field")]
+        [When(@"I click the covid service in the item field")]
         public void WhenIClickTheItemInTheItemField()
         {
             _mainPage.ClickOnCovid19InPopularService();

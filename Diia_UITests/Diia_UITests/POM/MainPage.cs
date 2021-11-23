@@ -27,7 +27,7 @@ namespace Diia_UITests.POM
         private readonly By _pageTitle = By.CssSelector("h1");
         private readonly By _chatbotButton = By.CssSelector("[id='chatbot_btn']");
         private readonly By _headerMenuLinksList = By.CssSelector("ul[class='menu_list']>li");
-        private readonly By _popularServicesButton = By.CssSelector("[class='swiper_services-slide-content']");
+        private readonly By _popularServicesButton = By.CssSelector("[class='swiper_services-slide-content']>a");
         private readonly By _buttonGromadyanamActiv = By.CssSelector("[class='nav-link active']");
         private readonly By _buttunBusinessActiv = By.CssSelector("[class='nav-link active']");
 
