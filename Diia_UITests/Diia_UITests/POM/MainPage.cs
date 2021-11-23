@@ -31,6 +31,9 @@ namespace Diia_UITests.POM
         private readonly By _swiperNextButton = By.CssSelector("[id='gromadyanam'] [class='swiper_services-btn-next swiper-btn-next']");
         private readonly By _swiperPreviousButton = By.CssSelector("[id='gromadyanam'] [class='swiper_services-btn-prev swiper-btn-prev']");
         private readonly By _popularServicesBlocks = By.CssSelector("[id='gromadyanam'] [class^='swiper-slide swiper_services-slide']");
+        private readonly By _popularServicesButton = By.CssSelector("[class='swiper_services-slide-content']>a");
+        private readonly By _buttonGromadyanamActiv = By.CssSelector("[class='nav-link active']");
+        private readonly By _buttunBusinessActiv = By.CssSelector("[class='nav-link active']");
 
         public MainPage GoToMainPage()
         {
@@ -127,6 +130,21 @@ namespace Diia_UITests.POM
         public bool CheckActivenessOfFirstPopularServiceBlock()
         {
             return _webDriver.FindElements(_popularServicesBlocks)[0].GetAttribute("class").Contains("active");
+        }
+
+        public void ClickOnCovid19InPopularService()
+        {
+            _webDriver.FindElements(_popularServicesButton)[0].Click();
+        }
+
+        public string CheckActivenessOfMenuGromadianam()
+        {
+            return _webDriver.FindElement(_buttonGromadyanamActiv).GetAttribute("class").Contains("active") ? "active" : "inactive";
+        }
+
+        public string CheckActivenessOfMenuBusiness()
+        {
+            return _webDriver.FindElement(_buttunBusinessActiv).GetAttribute("class").Contains("active") ? "active" : "inactive";
         }
     }
 }
