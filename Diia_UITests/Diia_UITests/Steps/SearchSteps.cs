@@ -54,7 +54,7 @@ namespace Diia_UITests.Steps
         [Then(@"The page with title '(.*)' does not change")]
         public void ThenThePageWithTitleDoesNotChange(string titleText)
         {
-            Assert.AreEqual(titleText, _mainPage.GetTextFromPageTitle());
+            Assert.AreEqual(titleText, _mainPage.GetTextFromPageHeaderTitle());
         }
     }
 }

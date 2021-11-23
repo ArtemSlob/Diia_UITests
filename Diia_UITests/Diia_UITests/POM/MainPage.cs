@@ -27,6 +27,7 @@ namespace Diia_UITests.POM
         private readonly By _searchField = By.CssSelector("[class='input form-search_input']");
         private readonly By _searchButton = By.CssSelector("[class='btn btn_search-main']");
         private readonly By _pageTitle = By.CssSelector("h1");
+        private readonly By _pageHeaderTitle = By.CssSelector("[class='header_title']");
         private readonly By _chatbotButton = By.CssSelector("[id='chatbot_btn']");
         private readonly By _headerMenuLinksList = By.CssSelector("ul[class='menu_list']>li");
         private readonly By _swiperNextButton = By.CssSelector("[id='gromadyanam'] [class='swiper_services-btn-next swiper-btn-next']");
@@ -63,6 +64,9 @@ namespace Diia_UITests.POM
 
         public string GetTextFromPageTitle() =>
             _webDriver.FindElement(_pageTitle).Text;
+
+        public string GetTextFromPageHeaderTitle() =>
+            _webDriver.FindElement(_pageHeaderTitle).Text;
 
         public void ClickOnChatbotButtonSection() =>
             _action.MoveToElement(_webDriver.FindElement(_chatbotButton)).Click().Perform();
