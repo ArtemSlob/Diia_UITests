@@ -57,7 +57,7 @@ namespace Diia_UITests.Steps
             _mainPage.ClickOnCovid19InPopularService(serviceName);
         }
 
-        [Then(@"The page with the title '(.*)' will open")]
+        [Then(@"The Covid page with title '(.*)' opens")]
         public void ThenThePageWithTheTitleWillOpen(string titleText)
         {
             Assert.AreEqual(titleText, _covid19.GetTextFromPageCovid19Title());

@@ -96,9 +96,9 @@ namespace Diia_UITests.POM
             _action.MoveToElement(_webDriver.FindElement(_chatbotButton)).Click().Perform();
         }
 
-        public string CheckActivenessOfMenu()
+        public bool CheckActivenessOfHeaderMenu()
         {
-            return _webDriver.FindElement(_servicesHeaderMenuDropDownLink).GetAttribute("class").Contains("active") ? "active" : "inactive";
+            return _webDriver.FindElement(_servicesHeaderMenuDropDownLink).GetAttribute("class").Contains("active");
         }
 
         public void ClickOnSwiperNextButton()

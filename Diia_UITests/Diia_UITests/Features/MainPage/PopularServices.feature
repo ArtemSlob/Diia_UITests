@@ -23,7 +23,7 @@ Scenario: Check swipe left in the popular services module by clicking the swiper
 @MainPage @PopularServices
 Scenario: Check the opening of the page of the popular service by clicking on it
 	When I click the service 'COVID-сертифікат про вакцинацію' in the popular service module
-	Then The page with the title 'COVID-сертифікат про вакцинацію' will open
+	Then The Covid page with title 'COVID-сертифікат про вакцинацію' opens
 
 @MainPage @PopularServices
 Scenario: Check switch between business and citizens sections in popular services module
