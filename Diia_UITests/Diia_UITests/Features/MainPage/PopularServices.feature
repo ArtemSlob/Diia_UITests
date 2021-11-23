@@ -6,6 +6,7 @@ Feature: PopularServices
 
 Background:
 	Given Main page open
+	Given The cookies pop-up close
 
 @popularservices
 Scenario: Check swipe right in the popular services module by clicking the swiper button next
@@ -25,7 +26,7 @@ Scenario: Check page opening when clicking on an element
 	Then A page will open with the title 'COVID-сертифікат про вакцинацію'
 
 @MainPage @PopularServices
-Scenario: Checking the opening of a window when clicking on an element
+Scenario: Check switch between business and citizens sections
 	When I click the Business button
 	Then A page with the heading Business will open
 	When I click the Gromadyanam button

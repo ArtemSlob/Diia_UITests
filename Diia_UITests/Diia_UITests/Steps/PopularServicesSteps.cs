@@ -21,6 +21,12 @@ namespace Diia_UITests.Steps
             _covid19 = new Covid19(_webDriver);
         }
 
+        [Given(@"The cookies pop-up close")]
+        public void GivenTheCookiesPop_UpClose()
+        {
+            _mainPage.ClickOnCookiesCloseButton();
+        }
+
         [When(@"I click on the swiper next button")]
         public void WhenIClickOnTheSwiperNextButton()
         {
@@ -48,7 +54,6 @@ namespace Diia_UITests.Steps
         [When(@"I click the service '(.*)' in the item field")]
         public void WhenIClickTheServiceInTheItemField(string serviceName)
         {
-            _mainPage.ClickOnCookiesCloseButton();
             _mainPage.ClickOnCovid19InPopularService(serviceName);
         }
 
@@ -58,28 +63,28 @@ namespace Diia_UITests.Steps
         {
             Assert.AreEqual(text, _covid19.GetTextFromPageCovid19Title());
         }
-        // А вот здесь собственно новый сценарий.
+
         [When(@"I click the Business button")]
         public void WhenIClickTheBusinessButton()
         {
-            _mainPage.CheckActivenessOfMenuBusiness();
+            _mainPage.ClickOnPopularServicesBusinessTab();
         }
 
         [Then(@"A page with the heading Business will open")]
-        public void ThenAPageWithTheHeadingWillOpen(string p0)
+        public void ThenAPageWithTheHeadingWillOpen()
         {
-            Assert.AreEqual("inactive", _mainPage.CheckActivenessOfMenuBusiness());
+            Assert.IsTrue(_mainPage.CheckActivenessOfMenuBusiness());
         }
 
         [When(@"I click the Gromadyanam button")]
         public void WhenIClickTheGromadyanamButton()
         {
-            _mainPage.CheckActivenessOfMenuGromadianam();
+            _mainPage.ClickOnPopularServicesGromadyanamTab();
         }
         [Then(@"A page with the heading Gromadyanam will open")]
-        public void ThenAPageWithHeadingWillOpen(string p0)
+        public void ThenAPageWithHeadingWillOpen()
         {
-            Assert.AreEqual("active", _mainPage.CheckActivenessOfMenuGromadianam());
+            Assert.IsTrue(_mainPage.CheckActivenessOfMenuGromadianam());
         }
     }
 }

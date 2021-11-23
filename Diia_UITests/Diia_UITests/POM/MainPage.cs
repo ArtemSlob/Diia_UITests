@@ -35,9 +35,9 @@ namespace Diia_UITests.POM
         private readonly By _swiperPreviousButton = By.CssSelector("[id='gromadyanam'] [class='swiper_services-btn-prev swiper-btn-prev']");
         private readonly By _popularServicesBlocks = By.CssSelector("[id='gromadyanam'] [class^='swiper-slide swiper_services-slide']");
         private readonly By _popularServicesButton = By.CssSelector("[class='swiper_services-slide-content']>a");
-        private readonly By _buttonGromadyanamActiv = By.CssSelector("[class='nav-link active']");
-        private readonly By _buttunBusinessActiv = By.CssSelector("[class='nav-link active']");
         private readonly By _cookiesCloseButton = By.CssSelector("[class='cookies-1_close']");
+        private readonly By _popularServicesBusinessTab = By.CssSelector("[id='biznesu-tab']");
+        private readonly By _popularServicesGromadyanamTab = By.CssSelector("[id='gromadyanam-tab']");
 
         public MainPage GoToMainPage()
         {
@@ -120,15 +120,24 @@ namespace Diia_UITests.POM
         {
             _helper.ClickOnLinkByText(linkText, _popularServicesButton);
         }
-
-        public string CheckActivenessOfMenuGromadianam()
+        public void ClickOnPopularServicesGromadyanamTab()
         {
-            return _webDriver.FindElement(_buttonGromadyanamActiv).GetAttribute("class").Contains("active") ? "active" : "inactive";
+            _webDriver.FindElement(_popularServicesGromadyanamTab).Click();
         }
 
-        public string CheckActivenessOfMenuBusiness()
+        public void ClickOnPopularServicesBusinessTab()
         {
-            return _webDriver.FindElement(_buttunBusinessActiv).GetAttribute("class").Contains("active") ? "active" : "inactive";
+            _webDriver.FindElement(_popularServicesBusinessTab).Click();
+        }
+
+        public bool CheckActivenessOfMenuGromadianam()
+        {
+            return _webDriver.FindElement(_popularServicesGromadyanamTab).GetAttribute("class").Contains("active");
+        }
+
+        public bool CheckActivenessOfMenuBusiness()
+        {
+            return _webDriver.FindElement(_popularServicesBusinessTab).GetAttribute("class").Contains("active");
         }
 
         public void ClickOnCookiesCloseButton()
