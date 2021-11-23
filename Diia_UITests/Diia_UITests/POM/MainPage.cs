@@ -27,6 +27,9 @@ namespace Diia_UITests.POM
         private readonly By _pageTitle = By.CssSelector("h1");
         private readonly By _chatbotButton = By.CssSelector("[id='chatbot_btn']");
         private readonly By _headerMenuLinksList = By.CssSelector("ul[class='menu_list']>li");
+        private readonly By _popularServicesButton = By.CssSelector("[class='swiper_services-slide-content']>a");
+        private readonly By _buttonGromadyanamActiv = By.CssSelector("[class='nav-link active']");
+        private readonly By _buttunBusinessActiv = By.CssSelector("[class='nav-link active']");
 
         public MainPage GoToMainPage()
         {
@@ -108,6 +111,21 @@ namespace Diia_UITests.POM
         public string CheckActivenessOfMenu()
         {
             return _webDriver.FindElement(_servicesHeaderMenuDropDownLink).GetAttribute("class").Contains("active") ? "active" : "inactive";
+        }
+
+        public void ClickOnCovid19InPopularService()
+        {
+            _webDriver.FindElements(_popularServicesButton)[0].Click();
+        }
+
+        public string CheckActivenessOfMenuGromadianam()
+        {
+            return _webDriver.FindElement(_buttonGromadyanamActiv).GetAttribute("class").Contains("active") ? "active" : "inactive";
+        }
+
+        public string CheckActivenessOfMenuBusiness()
+        {
+            return _webDriver.FindElement(_buttunBusinessActiv).GetAttribute("class").Contains("active") ? "active" : "inactive";
         }
     }
 }
