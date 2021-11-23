@@ -14,8 +14,8 @@ namespace Diia_UITests.POM
         private readonly By _searchRequestText = By.CssSelector("[class='search_request-text']");
         private readonly By _searchEmptyMessage = By.CssSelector("[class='search_empty-msg']");
 
-        public string GetToSeachResult() =>
-     _webDriver.FindElement(_searchRequestText).Text;
+        public bool GetToSeachResult(string message) =>
+     _webDriver.FindElement(_searchRequestText).Text.Contains(message);
 
         public string GetToEmptyMessageResult() =>
      _webDriver.FindElement(_searchEmptyMessage).Text;

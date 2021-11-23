@@ -40,19 +40,19 @@ namespace Diia_UITests.Steps
         }
 
         [Then(@"I see a search result page whith text '(.*)'")]
-        public void ThenISeeASearchResultPageWhithText(string text)  
+        public void ThenISeeASearchResultPageWhithText(string message)  
         {
-            Assert.AreEqual(text, _searchResult.GetToSeachResult());
+            Assert.IsTrue(_searchResult.GetToSeachResult(message));
         }
 
         [Then(@"I see a empty search result page whith text '(.*)'")]
-        public void ThenISeeAEmptySearchResultPageWhithText(string text)
+        public void ThenISeeAEmptySearchResultPageWhithText(string message)
         {
-            Assert.AreEqual(text, _searchResult.GetToEmptyMessageResult());
+            Assert.AreEqual(message, _searchResult.GetToEmptyMessageResult());
         }
 
         [Then(@"I see that the page has '(.*)' title")]
-        public void ThenISeeThatThePageHasNot(string titleText)
+        public void ThenISeeThatThePageHasTitle(string titleText)
         {
             Assert.AreEqual(titleText, _mainPage.GetTextFromHeaderTitle());
         }

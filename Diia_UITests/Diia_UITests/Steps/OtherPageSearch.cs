@@ -46,12 +46,6 @@ namespace Diia_UITests.Features
             _covid19.SearchButtonClick();
         }
 
-        [Then(@"I see a search results page with the text ""(.*)""")]
-        public void ThenISeeASearchResultPageWhithText(string text)
-        {
-            Assert.AreEqual(text, _searchResult.GetToSeachResult());
-        }
-
         [Then(@"I see a empty search result page whith the text ""(.*)""")]
         public void ThenISeeAEmptySearchResultPageWhithText(string text)
         {

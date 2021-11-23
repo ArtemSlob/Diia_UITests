@@ -21,7 +21,6 @@ namespace Diia_UITests.Features
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("Search")]
-    [NUnit.Framework.CategoryAttribute("MainPage")]
     [NUnit.Framework.CategoryAttribute("Search")]
     public partial class SearchFeature
     {
@@ -29,10 +28,9 @@ namespace Diia_UITests.Features
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = new string[] {
-                "MainPage",
                 "Search"};
         
-#line 1 "OtherPageSearch.feature"
+#line 1 "OtherPagesSearch.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
@@ -41,7 +39,6 @@ namespace Diia_UITests.Features
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Search", "\tAs a user\r\n\tI want to search for information on the main page\r\n\tIn order to find" +
                     " needed information", ProgrammingLanguage.CSharp, new string[] {
-                        "MainPage",
                         "Search"});
             testRunner.OnFeatureStart(featureInfo);
         }
@@ -90,14 +87,16 @@ namespace Diia_UITests.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("check your search results with valid data on the covid19 page")]
+        [NUnit.Framework.DescriptionAttribute("Check your search results with valid data on the covid19 page")]
+        [NUnit.Framework.CategoryAttribute("Search")]
         [NUnit.Framework.CategoryAttribute("Valid")]
         public virtual void CheckYourSearchResultsWithValidDataOnTheCovid19Page()
         {
             string[] tagsOfScenario = new string[] {
+                    "Search",
                     "Valid"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("check your search results with valid data on the covid19 page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check your search results with valid data on the covid19 page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 11
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -131,8 +130,7 @@ this.FeatureBackground();
  testRunner.When("I click the search button on other pages", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 15
- testRunner.Then("I see a search results page with the text \"За вашим запитом знайдено матеріалів: " +
-                        "16\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I see a search result page whith text \'За вашим запитом знайдено матеріалів:\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -140,10 +138,12 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Check the search with invalid input")]
+        [NUnit.Framework.CategoryAttribute("Search")]
         [NUnit.Framework.CategoryAttribute("Invalid")]
         public virtual void CheckTheSearchWithInvalidInput()
         {
             string[] tagsOfScenario = new string[] {
+                    "Search",
                     "Invalid"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check the search with invalid input", null, tagsOfScenario, argumentsOfScenario, this._featureTags);

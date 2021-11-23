@@ -91,10 +91,14 @@ namespace Diia_UITests.Features.MainPage
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Check the search results with valid input")]
+        [NUnit.Framework.CategoryAttribute("MainPage")]
+        [NUnit.Framework.CategoryAttribute("Search")]
         [NUnit.Framework.CategoryAttribute("Valid")]
         public virtual void CheckTheSearchResultsWithValidInput()
         {
             string[] tagsOfScenario = new string[] {
+                    "MainPage",
+                    "Search",
                     "Valid"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check the search results with valid input", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
@@ -136,10 +140,14 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Check the search with invalid input")]
+        [NUnit.Framework.CategoryAttribute("MainPage")]
+        [NUnit.Framework.CategoryAttribute("Search")]
         [NUnit.Framework.CategoryAttribute("Invalid")]
         public virtual void CheckTheSearchWithInvalidInput()
         {
             string[] tagsOfScenario = new string[] {
+                    "MainPage",
+                    "Search",
                     "Invalid"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check the search with invalid input", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
@@ -182,11 +190,15 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Check no changes occur when you enter a space in the search field")]
-        [NUnit.Framework.CategoryAttribute("InValid")]
+        [NUnit.Framework.CategoryAttribute("MainPage")]
+        [NUnit.Framework.CategoryAttribute("Search")]
+        [NUnit.Framework.CategoryAttribute("Invalid")]
         public virtual void CheckNoChangesOccurWhenYouEnterASpaceInTheSearchField()
         {
             string[] tagsOfScenario = new string[] {
-                    "InValid"};
+                    "MainPage",
+                    "Search",
+                    "Invalid"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check no changes occur when you enter a space in the search field", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 23
@@ -227,11 +239,15 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Check search field without data entry")]
-        [NUnit.Framework.CategoryAttribute("InValid")]
+        [NUnit.Framework.CategoryAttribute("MainPage")]
+        [NUnit.Framework.CategoryAttribute("Search")]
+        [NUnit.Framework.CategoryAttribute("Invalid")]
         public virtual void CheckSearchFieldWithoutDataEntry()
         {
             string[] tagsOfScenario = new string[] {
-                    "InValid"};
+                    "MainPage",
+                    "Search",
+                    "Invalid"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check search field without data entry", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 29

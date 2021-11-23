@@ -1,4 +1,4 @@
-﻿@MainPage @Search
+﻿@Search
 Feature: Search
 	As a user
 	I want to search for information on the main page
@@ -7,14 +7,14 @@ Feature: Search
 Background:
 	Given Covid page open
 
-@Valid
-Scenario: check your search results with valid data on the covid19 page
+@Search @Valid
+Scenario: Check your search results with valid data on the covid19 page
 	When I click on the search button
 	When I input "Відкрити ФОП" in the search field
 	When I click the search button on other pages
-	Then I see a search results page with the text "За вашим запитом знайдено матеріалів: 16"
+	Then I see a search result page whith text 'За вашим запитом знайдено матеріалів:'
 
-	@Invalid
+@Search	@Invalid
 Scenario: Check the search with invalid input
 	When I click on the search button
 	When I input "iasdfds26" in the search field 
