@@ -11,11 +11,9 @@ namespace Diia_UITests.POM
             _webDriver = webDriver;
         }
 
-        private readonly By _pageTitle = By.CssSelector("h1");
+        private readonly By _newsTitle = By.CssSelector("h1");
 
-        public string GetTextFromPageTitle()
-        {
-            return _webDriver.FindElement(_pageTitle).Text;
-        }
+        public string GetTextFromPageTitle() =>
+            _webDriver.FindElement(_newsTitle).Text;
     }
 }

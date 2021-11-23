@@ -22,13 +22,13 @@ namespace Diia_UITests.Steps
         }
 
         [Given(@"The cookies pop-up close")]
-        public void GivenTheCookiesPop_UpClose()
+        public void GivenTheCookiesPopUpClose()
         {
             _mainPage.ClickOnCookiesCloseButton();
         }
 
-        [When(@"I click on the swiper next button")]
-        public void WhenIClickOnTheSwiperNextButton()
+        [When(@"I click on the swiper button next")]
+        public void WhenIClickOnTheSwiperButtonNext()
         {
             _mainPage.ClickOnSwiperNextButton();
         }
@@ -36,11 +36,11 @@ namespace Diia_UITests.Steps
         [Then(@"The popular services moved by one position right")]
         public void ThenThePopularServicesMovedByOnePositionRight()
         {
-            Assert.IsTrue(!_mainPage.CheckActivenessOfFirstPopularServiceBlock());
+            Assert.IsTrue(!_mainPage.CheckActivenessOfFirstPopularServiceContainer());
         }
 
-        [When(@"I click on the swiper previous button")]
-        public void WhenIClickOnTheSwiperPreviousButton()
+        [When(@"I click on the swiper button previous")]
+        public void WhenIClickOnTheSwiperButtonPrevious()
         {
             _mainPage.ClickOnSwiperPreviousButton();
         }
@@ -48,41 +48,41 @@ namespace Diia_UITests.Steps
         [Then(@"The popular services moved by one position left")]
         public void ThenThePopularServicesMovedByOnePositionLeft()
         {
-            Assert.IsTrue(_mainPage.CheckActivenessOfFirstPopularServiceBlock());
+            Assert.IsTrue(_mainPage.CheckActivenessOfFirstPopularServiceContainer());
         }
 
-        [When(@"I click the service '(.*)' in the item field")]
-        public void WhenIClickTheServiceInTheItemField(string serviceName)
+        [When(@"I click the service '(.*)' in the popular service module")]
+        public void WhenIClickTheServiceInThePopularServiceModule(string serviceName)
         {
-            _mainPage.ClickOnCovid19InPopularService(serviceName);
+            _mainPage.ClickOnPopularService(serviceName);
         }
 
-
-        [Then(@"A page will open with the title '(.*)'")]
-        public void ThenAPageWillOpenWithTheTitle(string text)
+        [Then(@"The Covid page with title '(.*)' opens")]
+        public void ThenThePageWithTheTitleWillOpen(string titleText)
         {
-            Assert.AreEqual(text, _covid19.GetTextFromPageCovid19Title());
+            Assert.AreEqual(titleText, _covid19.GetTextFromPageCovid19Title());
         }
 
-        [When(@"I click the Business button")]
-        public void WhenIClickTheBusinessButton()
+        [When(@"I click the Business tab in popular services module")]
+        public void WhenIClickTheBusinessTabInPopularServicesModule()
         {
             _mainPage.ClickOnPopularServicesBusinessTab();
         }
 
-        [Then(@"A page with the heading Business will open")]
-        public void ThenAPageWithTheHeadingWillOpen()
+        [Then(@"The popular services module will switch to Business section")]
+        public void ThenThePopularServicesModuleWillSwitchToBusinessSection()
         {
             Assert.IsTrue(_mainPage.CheckActivenessOfMenuBusiness());
         }
 
-        [When(@"I click the Gromadyanam button")]
-        public void WhenIClickTheGromadyanamButton()
+        [When(@"I click the Gromadyanam tab in popular services module")]
+        public void WhenIClickTheGromadyanamTabInPopularServicesModule()
         {
             _mainPage.ClickOnPopularServicesGromadyanamTab();
         }
-        [Then(@"A page with the heading Gromadyanam will open")]
-        public void ThenAPageWithHeadingWillOpen()
+
+        [Then(@"The popular services module will switch to Gromadyanam section")]
+        public void ThenThePopularServicesModuleWillSwitchToGromadyanamSection()
         {
             Assert.IsTrue(_mainPage.CheckActivenessOfMenuGromadianam());
         }

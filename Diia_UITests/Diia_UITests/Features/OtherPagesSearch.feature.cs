@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace Diia_UITests.Features.MainPage
+namespace Diia_UITests.Features
 {
     using TechTalk.SpecFlow;
     using System;
@@ -21,7 +21,6 @@ namespace Diia_UITests.Features.MainPage
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("Search")]
-    [NUnit.Framework.CategoryAttribute("MainPage")]
     [NUnit.Framework.CategoryAttribute("Search")]
     public partial class SearchFeature
     {
@@ -29,19 +28,17 @@ namespace Diia_UITests.Features.MainPage
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = new string[] {
-                "MainPage",
                 "Search"};
         
-#line 1 "Search.feature"
+#line 1 "OtherPagesSearch.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features/MainPage", "Search", "\tAs a user\r\n\tI want the search on the main page\r\n\tIn order to find needed informa" +
-                    "tion", ProgrammingLanguage.CSharp, new string[] {
-                        "MainPage",
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Search", "\tAs a user\r\n\tI want the search in the header on all pages except the main one\r\n\tI" +
+                    "n order to find needed information", ProgrammingLanguage.CSharp, new string[] {
                         "Search"});
             testRunner.OnFeatureStart(featureInfo);
         }
@@ -85,23 +82,21 @@ namespace Diia_UITests.Features.MainPage
 #line 7
 #line hidden
 #line 8
- testRunner.Given("Main page open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("Covid page open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Check the search with valid input")]
-        [NUnit.Framework.CategoryAttribute("MainPage")]
+        [NUnit.Framework.DescriptionAttribute("Check the search with valid input on the covid19 page")]
         [NUnit.Framework.CategoryAttribute("Search")]
         [NUnit.Framework.CategoryAttribute("Valid")]
-        public virtual void CheckTheSearchWithValidInput()
+        public virtual void CheckTheSearchWithValidInputOnTheCovid19Page()
         {
             string[] tagsOfScenario = new string[] {
-                    "MainPage",
                     "Search",
                     "Valid"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check the search with valid input", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check the search with valid input on the covid19 page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 11
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -126,12 +121,15 @@ this.ScenarioInitialize(scenarioInfo);
 this.FeatureBackground();
 #line hidden
 #line 12
- testRunner.When("I input \'Відкрити ФОП\' in the search field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I click the search button activation in the header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 13
- testRunner.When("I click the search button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I input \'Відкрити ФОП\' in the search field in the header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 14
+ testRunner.When("I click the search button in the header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 15
  testRunner.Then("The search result page whith text \'За вашим запитом знайдено матеріалів:\' opens", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -140,18 +138,16 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Check the search with invalid input")]
-        [NUnit.Framework.CategoryAttribute("MainPage")]
         [NUnit.Framework.CategoryAttribute("Search")]
         [NUnit.Framework.CategoryAttribute("Invalid")]
         public virtual void CheckTheSearchWithInvalidInput()
         {
             string[] tagsOfScenario = new string[] {
-                    "MainPage",
                     "Search",
                     "Invalid"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check the search with invalid input", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 17
+#line 18
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -174,13 +170,16 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
 this.FeatureBackground();
 #line hidden
-#line 18
- testRunner.When("I input \'iasdfds26\' in the search field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
 #line 19
- testRunner.When("I click the search button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I click the search button activation in the header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 20
+ testRunner.When("I input \'iasdfds26\' in the search field in the header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 21
+ testRunner.When("I click the search button in the header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 22
  testRunner.Then("The empty search result page whith text \'За вашим запитом не знайдено матеріалів\'" +
                         " opens", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -189,19 +188,17 @@ this.FeatureBackground();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Check that the page does not change when you enter a space in the search")]
-        [NUnit.Framework.CategoryAttribute("MainPage")]
+        [NUnit.Framework.DescriptionAttribute("Check that the page does not change when you enter a space in the header search")]
         [NUnit.Framework.CategoryAttribute("Search")]
         [NUnit.Framework.CategoryAttribute("Invalid")]
-        public virtual void CheckThatThePageDoesNotChangeWhenYouEnterASpaceInTheSearch()
+        public virtual void CheckThatThePageDoesNotChangeWhenYouEnterASpaceInTheHeaderSearch()
         {
             string[] tagsOfScenario = new string[] {
-                    "MainPage",
                     "Search",
                     "Invalid"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check that the page does not change when you enter a space in the search", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 23
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check that the page does not change when you enter a space in the header search", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 25
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -224,14 +221,17 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
 this.FeatureBackground();
 #line hidden
-#line 24
- testRunner.When("I input \' \' in the search field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 25
- testRunner.When("I click the search button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
 #line 26
- testRunner.Then("The page with title \'Державні послуги онлайн\' does not change", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("I click the search button activation in the header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 27
+ testRunner.When("I input \' \' in the search field in the header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 28
+ testRunner.When("I click the search button in the header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 29
+ testRunner.Then("The Covid page with title \'COVID-сертифікат про вакцинацію\' does not change", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -239,20 +239,18 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Check that the page will not change after clicking on the search button without e" +
-            "ntering anything")]
-        [NUnit.Framework.CategoryAttribute("MainPage")]
+            "ntering anything in the header search")]
         [NUnit.Framework.CategoryAttribute("Search")]
         [NUnit.Framework.CategoryAttribute("Invalid")]
-        public virtual void CheckThatThePageWillNotChangeAfterClickingOnTheSearchButtonWithoutEnteringAnything()
+        public virtual void CheckThatThePageWillNotChangeAfterClickingOnTheSearchButtonWithoutEnteringAnythingInTheHeaderSearch()
         {
             string[] tagsOfScenario = new string[] {
-                    "MainPage",
                     "Search",
                     "Invalid"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check that the page will not change after clicking on the search button without e" +
-                    "ntering anything", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 29
+                    "ntering anything in the header search", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 32
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -275,11 +273,14 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
 this.FeatureBackground();
 #line hidden
-#line 30
- testRunner.When("I click the search button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 33
+ testRunner.When("I click the search button activation in the header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 31
- testRunner.Then("The page with title \'Державні послуги онлайн\' does not change", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 34
+ testRunner.When("I click the search button in the header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 35
+ testRunner.Then("The Covid page with title \'COVID-сертифікат про вакцинацію\' does not change", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

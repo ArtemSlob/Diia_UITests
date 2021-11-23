@@ -1,31 +1,31 @@
 ﻿@MainPage @Search
 Feature: Search
 	As a user
-	I want to search for information on the main page
+	I want the search on the main page
 	In order to find needed information
 
 Background:
 	Given Main page open
 
-@Valid
-Scenario: Check the search results with valid input
+@MainPage @Search @Valid
+Scenario: Check the search with valid input
 	When I input 'Відкрити ФОП' in the search field
 	When I click the search button
-	Then I see a search result page whith text 'За вашим запитом знайдено матеріалів: 16'
+	Then The search result page whith text 'За вашим запитом знайдено матеріалів:' opens
 
-@Invalid
+@MainPage @Search @Invalid
 Scenario: Check the search with invalid input
 	When I input 'iasdfds26' in the search field
 	When I click the search button
-	Then I see a empty search result page whith text 'За вашим запитом не знайдено матеріалів'
+	Then The empty search result page whith text 'За вашим запитом не знайдено матеріалів' opens
 
-@InValid
-Scenario: Check no changes occur when you enter a space in the search field
+@MainPage @Search @Invalid
+Scenario: Check that the page does not change when you enter a space in the search
 	When I input ' ' in the search field
 	When I click the search button
-	Then I see that the page has 'Державні послуги онлайн' title
+	Then The page with title 'Державні послуги онлайн' does not change
 
-@InValid
-Scenario: Check search field without data entry
+@MainPage @Search @Invalid
+Scenario: Check that the page will not change after clicking on the search button without entering anything
 	When I click the search button
-	Then I see that the page has 'Державні послуги онлайн' title
+	Then The page with title 'Державні послуги онлайн' does not change

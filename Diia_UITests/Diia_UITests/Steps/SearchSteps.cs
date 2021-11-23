@@ -30,7 +30,7 @@ namespace Diia_UITests.Steps
         [When(@"I input '(.*)' in the search field")]
         public void WhenIInputInTheSearchField(string input)
         {
-            _mainPage.EnterDataForSearch(input);
+            _mainPage.EnterDataInSearchField(input);
         }
 
         [When(@"I click the search button")]
@@ -39,22 +39,22 @@ namespace Diia_UITests.Steps
             _mainPage.SearchButtonClick();
         }
 
-        [Then(@"I see a search result page whith text '(.*)'")]
-        public void ThenISeeASearchResultPageWhithText(string text)  
+        [Then(@"The search result page whith text '(.*)' opens")]
+        public void ThenTheSearchResultPageWhithTextOpens(string message)  
         {
-            Assert.AreEqual(text, _searchResult.GetToSeachResult());
+            Assert.IsTrue(_searchResult.GetSuccessfulSeachMessageText(message));
         }
 
-        [Then(@"I see a empty search result page whith text '(.*)'")]
-        public void ThenISeeAEmptySearchResultPageWhithText(string text)
+        [Then(@"The empty search result page whith text '(.*)' opens")]
+        public void ThenTheEmptySearchResultPageWhithTextOpens(string message)
         {
-            Assert.AreEqual(text, _searchResult.GetToEmptyMessageResult());
+            Assert.AreEqual(message, _searchResult.GetFailedSeachMessageText());
         }
 
-        [Then(@"I see that the page has '(.*)' title")]
-        public void ThenISeeThatThePageHasNot(string titleText)
+        [Then(@"The page with title '(.*)' does not change")]
+        public void ThenThePageWithTitleDoesNotChange(string titleText)
         {
-            Assert.AreEqual(titleText, _mainPage.GetTextFromHeaderTitle());
+            Assert.AreEqual(titleText, _mainPage.GetTextFromPageHeaderTitle());
         }
     }
 }

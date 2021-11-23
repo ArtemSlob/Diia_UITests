@@ -21,14 +21,16 @@ namespace Diia_UITests.Features.MainPage
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("PopularServices")]
-    [NUnit.Framework.CategoryAttribute("popularservices")]
+    [NUnit.Framework.CategoryAttribute("MainPage")]
+    [NUnit.Framework.CategoryAttribute("PopularServices")]
     public partial class PopularServicesFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = new string[] {
-                "popularservices"};
+                "MainPage",
+                "PopularServices"};
         
 #line 1 "PopularServices.feature"
 #line hidden
@@ -39,7 +41,8 @@ namespace Diia_UITests.Features.MainPage
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features/MainPage", "PopularServices", "\tAs a user\r\n\tI want to see popular services on the main page\r\n\tIn order to find t" +
                     "hem faster", ProgrammingLanguage.CSharp, new string[] {
-                        "popularservices"});
+                        "MainPage",
+                        "PopularServices"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -92,11 +95,13 @@ namespace Diia_UITests.Features.MainPage
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Check swipe right in the popular services module by clicking the swiper button ne" +
             "xt")]
-        [NUnit.Framework.CategoryAttribute("popularservices")]
+        [NUnit.Framework.CategoryAttribute("MainPage")]
+        [NUnit.Framework.CategoryAttribute("PopularServices")]
         public virtual void CheckSwipeRightInThePopularServicesModuleByClickingTheSwiperButtonNext()
         {
             string[] tagsOfScenario = new string[] {
-                    "popularservices"};
+                    "MainPage",
+                    "PopularServices"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check swipe right in the popular services module by clicking the swiper button ne" +
                     "xt", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
@@ -124,7 +129,7 @@ this.ScenarioInitialize(scenarioInfo);
 this.FeatureBackground();
 #line hidden
 #line 13
- testRunner.When("I click on the swiper next button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I click on the swiper button next", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 14
  testRunner.Then("The popular services moved by one position right", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -136,11 +141,13 @@ this.FeatureBackground();
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Check swipe left in the popular services module by clicking the swiper button pre" +
             "vious")]
-        [NUnit.Framework.CategoryAttribute("popularservices")]
+        [NUnit.Framework.CategoryAttribute("MainPage")]
+        [NUnit.Framework.CategoryAttribute("PopularServices")]
         public virtual void CheckSwipeLeftInThePopularServicesModuleByClickingTheSwiperButtonPrevious()
         {
             string[] tagsOfScenario = new string[] {
-                    "popularservices"};
+                    "MainPage",
+                    "PopularServices"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check swipe left in the popular services module by clicking the swiper button pre" +
                     "vious", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
@@ -168,13 +175,13 @@ this.ScenarioInitialize(scenarioInfo);
 this.FeatureBackground();
 #line hidden
 #line 18
- testRunner.When("I click on the swiper next button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I click on the swiper button next", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 19
  testRunner.Then("The popular services moved by one position right", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 20
- testRunner.When("I click on the swiper previous button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I click on the swiper button previous", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 21
  testRunner.Then("The popular services moved by one position left", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -184,16 +191,16 @@ this.FeatureBackground();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Check page opening when clicking on an element")]
+        [NUnit.Framework.DescriptionAttribute("Check the opening of the page of the popular service by clicking on it")]
         [NUnit.Framework.CategoryAttribute("MainPage")]
         [NUnit.Framework.CategoryAttribute("PopularServices")]
-        public virtual void CheckPageOpeningWhenClickingOnAnElement()
+        public virtual void CheckTheOpeningOfThePageOfThePopularServiceByClickingOnIt()
         {
             string[] tagsOfScenario = new string[] {
                     "MainPage",
                     "PopularServices"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check page opening when clicking on an element", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check the opening of the page of the popular service by clicking on it", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 24
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -218,26 +225,27 @@ this.ScenarioInitialize(scenarioInfo);
 this.FeatureBackground();
 #line hidden
 #line 25
- testRunner.When("I click the service \'COVID-сертифікат про вакцинацію\' in the item field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I click the service \'COVID-сертифікат про вакцинацію\' in the popular service modu" +
+                        "le", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 26
- testRunner.Then("A page will open with the title \'COVID-сертифікат про вакцинацію\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("The Covid page with title \'COVID-сертифікат про вакцинацію\' opens", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Check switch between business and citizens sections")]
+        [NUnit.Framework.DescriptionAttribute("Check switch between business and citizens sections in popular services module")]
         [NUnit.Framework.CategoryAttribute("MainPage")]
         [NUnit.Framework.CategoryAttribute("PopularServices")]
-        public virtual void CheckSwitchBetweenBusinessAndCitizensSections()
+        public virtual void CheckSwitchBetweenBusinessAndCitizensSectionsInPopularServicesModule()
         {
             string[] tagsOfScenario = new string[] {
                     "MainPage",
                     "PopularServices"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check switch between business and citizens sections", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check switch between business and citizens sections in popular services module", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 29
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -262,16 +270,16 @@ this.ScenarioInitialize(scenarioInfo);
 this.FeatureBackground();
 #line hidden
 #line 30
- testRunner.When("I click the Business button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I click the Business tab in popular services module", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 31
- testRunner.Then("A page with the heading Business will open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("The popular services module will switch to Business section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 32
- testRunner.When("I click the Gromadyanam button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I click the Gromadyanam tab in popular services module", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 33
- testRunner.Then("A page with the heading Gromadyanam will open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("The popular services module will switch to Gromadyanam section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

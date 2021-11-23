@@ -29,8 +29,8 @@ namespace Diia_UITests.Steps
             _mainPage.GoToMainPage();
         }
 
-        [When(@"I click link (.*) from Services list")]
-        public void WhenIClickFromServicesList(string linkText)
+        [When(@"I click the link (.*) from header menu Services list")]
+        public void WhenIClickTheLinkFromHeaderMenuServicesList(string linkText)
         {
             _mainPage.ClickOnServicesHeaderMenuLink(linkText);
         }
@@ -47,10 +47,16 @@ namespace Diia_UITests.Steps
             _mainPage.ClickOnHeaderMenuLink(linkText);
         }
 
-        [Then(@"The header pop-up menu collapses")]
-        public void ThenTheHeaderPop_UpMenuCollapses()
+        [Then(@"The header pop-up menu expands")]
+        public void ThenTheHeaderPopUpMenuExpands()
         {
-            Assert.AreEqual("inactive", _mainPage.CheckActivenessOfMenu());
+            Assert.IsTrue(_mainPage.CheckActivenessOfHeaderMenu());
+        }
+
+        [Then(@"The header pop-up menu collapses")]
+        public void ThenTheHeaderPopUpMenuCollapses()
+        {
+            Assert.IsTrue(!_mainPage.CheckActivenessOfHeaderMenu());
         }
 
         [Then(@"Page with title (.*) opens")]
@@ -70,6 +76,5 @@ namespace Diia_UITests.Steps
         {
             Assert.AreEqual(titleText, _faqPage.GetTextFromPageTitle());
         }
-
     }
 }

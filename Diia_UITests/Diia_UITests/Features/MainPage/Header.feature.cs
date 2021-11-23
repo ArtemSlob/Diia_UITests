@@ -21,14 +21,16 @@ namespace Diia_UITests.Features.MainPage
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("Header")]
-    [NUnit.Framework.CategoryAttribute("header")]
+    [NUnit.Framework.CategoryAttribute("MainPage")]
+    [NUnit.Framework.CategoryAttribute("Header")]
     public partial class HeaderFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = new string[] {
-                "header"};
+                "MainPage",
+                "Header"};
         
 #line 1 "Header.feature"
 #line hidden
@@ -39,7 +41,8 @@ namespace Diia_UITests.Features.MainPage
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features/MainPage", "Header", "As a user\r\nI want the header on the site\r\nIn order to access the main services of" +
                     " the site", ProgrammingLanguage.CSharp, new string[] {
-                        "header"});
+                        "MainPage",
+                        "Header"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -89,9 +92,9 @@ namespace Diia_UITests.Features.MainPage
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Check the ability to open the Service pages using the link in the header services" +
             " section")]
-        [NUnit.Framework.CategoryAttribute("header")]
-        [NUnit.Framework.CategoryAttribute("headermenu")]
-        [NUnit.Framework.CategoryAttribute("services")]
+        [NUnit.Framework.CategoryAttribute("MainPage")]
+        [NUnit.Framework.CategoryAttribute("Header")]
+        [NUnit.Framework.CategoryAttribute("HeaderMenu")]
         [NUnit.Framework.TestCaseAttribute("Довідки та витяги", null)]
         [NUnit.Framework.TestCaseAttribute("Навколишнє середовище", null)]
         [NUnit.Framework.TestCaseAttribute("Безпека та правопорядок", null)]
@@ -111,9 +114,9 @@ namespace Diia_UITests.Features.MainPage
         public virtual void CheckTheAbilityToOpenTheServicePagesUsingTheLinkInTheHeaderServicesSection(string servicesSubMenuLinkText, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "header",
-                    "headermenu",
-                    "services"};
+                    "MainPage",
+                    "Header",
+                    "HeaderMenu"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -150,7 +153,7 @@ this.FeatureBackground();
  testRunner.When("I click the link \'Послуги\' in the header menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 13
- testRunner.When(string.Format("I click link {0} from Services list", servicesSubMenuLinkText), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("I click the link {0} from header menu Services list", servicesSubMenuLinkText), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 14
  testRunner.Then(string.Format("Page with title {0} opens", servicesSubMenuLinkText), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -162,13 +165,15 @@ this.FeatureBackground();
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Check the closing of the pop-up header menu by clicking on an area outside the he" +
             "ader menu")]
-        [NUnit.Framework.CategoryAttribute("header")]
-        [NUnit.Framework.CategoryAttribute("headermenu")]
+        [NUnit.Framework.CategoryAttribute("MainPage")]
+        [NUnit.Framework.CategoryAttribute("Header")]
+        [NUnit.Framework.CategoryAttribute("HeaderMenu")]
         public virtual void CheckTheClosingOfThePop_UpHeaderMenuByClickingOnAnAreaOutsideTheHeaderMenu()
         {
             string[] tagsOfScenario = new string[] {
-                    "header",
-                    "headermenu"};
+                    "MainPage",
+                    "Header",
+                    "HeaderMenu"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check the closing of the pop-up header menu by clicking on an area outside the he" +
                     "ader menu", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
@@ -199,9 +204,12 @@ this.FeatureBackground();
  testRunner.When("I click the link \'Послуги\' in the header menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 38
- testRunner.When("I click on an area outside the header menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("The header pop-up menu expands", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 39
+ testRunner.When("I click on an area outside the header menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 40
  testRunner.Then("The header pop-up menu collapses", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -211,17 +219,19 @@ this.FeatureBackground();
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Check the closing of the pop-up header menu by clicking on the button that opened" +
             " the menu")]
-        [NUnit.Framework.CategoryAttribute("header")]
-        [NUnit.Framework.CategoryAttribute("headermenu")]
+        [NUnit.Framework.CategoryAttribute("MainPage")]
+        [NUnit.Framework.CategoryAttribute("Header")]
+        [NUnit.Framework.CategoryAttribute("HeaderMenu")]
         public virtual void CheckTheClosingOfThePop_UpHeaderMenuByClickingOnTheButtonThatOpenedTheMenu()
         {
             string[] tagsOfScenario = new string[] {
-                    "header",
-                    "headermenu"};
+                    "MainPage",
+                    "Header",
+                    "HeaderMenu"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check the closing of the pop-up header menu by clicking on the button that opened" +
                     " the menu", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 42
+#line 43
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -244,13 +254,16 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
 this.FeatureBackground();
 #line hidden
-#line 43
- testRunner.When("I click the link \'Послуги\' in the header menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
 #line 44
  testRunner.When("I click the link \'Послуги\' in the header menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 45
+ testRunner.Then("The header pop-up menu expands", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 46
+ testRunner.When("I click the link \'Послуги\' in the header menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 47
  testRunner.Then("The header pop-up menu collapses", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -260,19 +273,19 @@ this.FeatureBackground();
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Check the ability to open the News page using the links in the header menu sectio" +
             "n")]
-        [NUnit.Framework.CategoryAttribute("header")]
-        [NUnit.Framework.CategoryAttribute("headermenu")]
-        [NUnit.Framework.CategoryAttribute("news")]
+        [NUnit.Framework.CategoryAttribute("MainPage")]
+        [NUnit.Framework.CategoryAttribute("Header")]
+        [NUnit.Framework.CategoryAttribute("HeaderMenu")]
         public virtual void CheckTheAbilityToOpenTheNewsPageUsingTheLinksInTheHeaderMenuSection()
         {
             string[] tagsOfScenario = new string[] {
-                    "header",
-                    "headermenu",
-                    "news"};
+                    "MainPage",
+                    "Header",
+                    "HeaderMenu"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check the ability to open the News page using the links in the header menu sectio" +
                     "n", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 48
+#line 50
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -295,10 +308,10 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
 this.FeatureBackground();
 #line hidden
-#line 49
+#line 51
  testRunner.When("I click the link \'Новини\' in the header menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 50
+#line 52
  testRunner.Then("The News page with title \'Новини\' opens", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -308,19 +321,19 @@ this.FeatureBackground();
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Check the ability to open the Faq page using the links in the header menu section" +
             "")]
-        [NUnit.Framework.CategoryAttribute("header")]
-        [NUnit.Framework.CategoryAttribute("headermenu")]
-        [NUnit.Framework.CategoryAttribute("faq")]
+        [NUnit.Framework.CategoryAttribute("MainPage")]
+        [NUnit.Framework.CategoryAttribute("Header")]
+        [NUnit.Framework.CategoryAttribute("HeaderMenu")]
         public virtual void CheckTheAbilityToOpenTheFaqPageUsingTheLinksInTheHeaderMenuSection()
         {
             string[] tagsOfScenario = new string[] {
-                    "header",
-                    "headermenu",
-                    "faq"};
+                    "MainPage",
+                    "Header",
+                    "HeaderMenu"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check the ability to open the Faq page using the links in the header menu section" +
                     "", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 53
+#line 55
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -343,10 +356,10 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
 this.FeatureBackground();
 #line hidden
-#line 54
+#line 56
  testRunner.When("I click the link \'Питання та відповіді\' in the header menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 55
+#line 57
  testRunner.Then("The Faq page with title \'Поширені запитання\' opens", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

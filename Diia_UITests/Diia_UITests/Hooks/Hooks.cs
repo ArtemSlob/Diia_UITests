@@ -23,7 +23,6 @@ namespace Diia_UITests
         {
             ChromeOptions options = new ChromeOptions();
             options.AddArgument("--start-maximized");
-
             new DriverManager().SetUpDriver(new ChromeConfig(), VersionResolveStrategy.MatchingBrowser);
             ChromeDriver driver = new ChromeDriver(options);
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);

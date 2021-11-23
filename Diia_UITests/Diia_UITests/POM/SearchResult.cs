@@ -11,13 +11,13 @@ namespace Diia_UITests.POM
             _webDriver = webDriver;
         }
 
-        private readonly By _searchRequestText = By.CssSelector("[class='search_request-text']");
-        private readonly By _searchEmptyMessage = By.CssSelector("[class='search_empty-msg']");
+        private readonly By _successfulSearchMessage = By.CssSelector("[class='search_request-text']");
+        private readonly By _failedSearchMessage = By.CssSelector("[class='search_empty-msg']");
 
-        public string GetToSeachResult() =>
-     _webDriver.FindElement(_searchRequestText).Text;
+        public bool GetSuccessfulSeachMessageText(string message) =>
+            _webDriver.FindElement(_successfulSearchMessage).Text.Contains(message);
 
-        public string GetToEmptyMessageResult() =>
-     _webDriver.FindElement(_searchEmptyMessage).Text;
+        public string GetFailedSeachMessageText() =>
+            _webDriver.FindElement(_failedSearchMessage).Text;
     }
 }
