@@ -39,8 +39,8 @@ namespace Diia_UITests.Features.MainPage
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features/MainPage", "Search", "\tAs a user\r\n\tI want to search for information on the main page\r\n\tIn order to find" +
-                    " needed information", ProgrammingLanguage.CSharp, new string[] {
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features/MainPage", "Search", "\tAs a user\r\n\tI want the search on the main page\r\n\tIn order to find needed informa" +
+                    "tion", ProgrammingLanguage.CSharp, new string[] {
                         "MainPage",
                         "Search"});
             testRunner.OnFeatureStart(featureInfo);
@@ -90,18 +90,18 @@ namespace Diia_UITests.Features.MainPage
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Check the search results with valid input")]
+        [NUnit.Framework.DescriptionAttribute("Check the search with valid input")]
         [NUnit.Framework.CategoryAttribute("MainPage")]
         [NUnit.Framework.CategoryAttribute("Search")]
         [NUnit.Framework.CategoryAttribute("Valid")]
-        public virtual void CheckTheSearchResultsWithValidInput()
+        public virtual void CheckTheSearchWithValidInput()
         {
             string[] tagsOfScenario = new string[] {
                     "MainPage",
                     "Search",
                     "Valid"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check the search results with valid input", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check the search with valid input", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 11
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -132,7 +132,7 @@ this.FeatureBackground();
  testRunner.When("I click the search button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 14
- testRunner.Then("I see a search result page whith text \'За вашим запитом знайдено матеріалів: 16\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("The search result page whith text \'За вашим запитом знайдено матеріалів:\' opens", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -181,26 +181,26 @@ this.FeatureBackground();
  testRunner.When("I click the search button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 20
- testRunner.Then("I see a empty search result page whith text \'За вашим запитом не знайдено матеріа" +
-                        "лів\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("The empty search result page whith text \'За вашим запитом не знайдено матеріалів\'" +
+                        " opens", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Check no changes occur when you enter a space in the search field")]
+        [NUnit.Framework.DescriptionAttribute("Check that the page does not change when you enter a space in the search")]
         [NUnit.Framework.CategoryAttribute("MainPage")]
         [NUnit.Framework.CategoryAttribute("Search")]
         [NUnit.Framework.CategoryAttribute("Invalid")]
-        public virtual void CheckNoChangesOccurWhenYouEnterASpaceInTheSearchField()
+        public virtual void CheckThatThePageDoesNotChangeWhenYouEnterASpaceInTheSearch()
         {
             string[] tagsOfScenario = new string[] {
                     "MainPage",
                     "Search",
                     "Invalid"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check no changes occur when you enter a space in the search field", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check that the page does not change when you enter a space in the search", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 23
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -231,25 +231,27 @@ this.FeatureBackground();
  testRunner.When("I click the search button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 26
- testRunner.Then("I see that the page has \'Державні послуги онлайн\' title", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("The page with title \'Державні послуги онлайн\' does not change", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Check search field without data entry")]
+        [NUnit.Framework.DescriptionAttribute("Check that the page will not change after clicking on the search button without e" +
+            "ntering anything")]
         [NUnit.Framework.CategoryAttribute("MainPage")]
         [NUnit.Framework.CategoryAttribute("Search")]
         [NUnit.Framework.CategoryAttribute("Invalid")]
-        public virtual void CheckSearchFieldWithoutDataEntry()
+        public virtual void CheckThatThePageWillNotChangeAfterClickingOnTheSearchButtonWithoutEnteringAnything()
         {
             string[] tagsOfScenario = new string[] {
                     "MainPage",
                     "Search",
                     "Invalid"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check search field without data entry", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check that the page will not change after clicking on the search button without e" +
+                    "ntering anything", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 29
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -277,7 +279,7 @@ this.FeatureBackground();
  testRunner.When("I click the search button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 31
- testRunner.Then("I see that the page has \'Державні послуги онлайн\' title", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("The page with title \'Державні послуги онлайн\' does not change", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

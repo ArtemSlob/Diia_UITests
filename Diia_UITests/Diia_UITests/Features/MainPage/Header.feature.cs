@@ -153,7 +153,7 @@ this.FeatureBackground();
  testRunner.When("I click the link \'Послуги\' in the header menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 13
- testRunner.When(string.Format("I click link {0} from Services list", servicesSubMenuLinkText), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("I click the link {0} from header menu Services list", servicesSubMenuLinkText), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 14
  testRunner.Then(string.Format("Page with title {0} opens", servicesSubMenuLinkText), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

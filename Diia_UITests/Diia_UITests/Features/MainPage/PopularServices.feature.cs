@@ -229,7 +229,7 @@ this.FeatureBackground();
                         "le", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 26
- testRunner.Then("The page with the title \'COVID-сертифікат про вакцинацію\' will open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("The Covid page with title \'COVID-сертифікат про вакцинацію\' opens", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

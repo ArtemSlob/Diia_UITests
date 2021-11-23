@@ -39,20 +39,20 @@ namespace Diia_UITests.Steps
             _mainPage.SearchButtonClick();
         }
 
-        [Then(@"I see a search result page whith text '(.*)'")]
-        public void ThenISeeASearchResultPageWhithText(string message)  
+        [Then(@"The search result page whith text '(.*)' opens")]
+        public void ThenTheSearchResultPageWhithTextOpens(string message)  
         {
             Assert.IsTrue(_searchResult.GetToSeachResult(message));
         }
 
-        [Then(@"I see a empty search result page whith text '(.*)'")]
-        public void ThenISeeAEmptySearchResultPageWhithText(string message)
+        [Then(@"The empty search result page whith text '(.*)' opens")]
+        public void ThenTheEmptySearchResultPageWhithTextOpens(string message)
         {
             Assert.AreEqual(message, _searchResult.GetToEmptyMessageResult());
         }
 
-        [Then(@"I see that the page has '(.*)' title")]
-        public void ThenISeeThatThePageHasTitle(string titleText)
+        [Then(@"The page with title '(.*)' does not change")]
+        public void ThenThePageWithTitleDoesNotChange(string titleText)
         {
             Assert.AreEqual(titleText, _mainPage.GetTextFromHeaderTitle());
         }

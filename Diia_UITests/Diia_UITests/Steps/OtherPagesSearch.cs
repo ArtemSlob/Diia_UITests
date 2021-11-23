@@ -6,19 +6,17 @@ using TechTalk.SpecFlow;
 namespace Diia_UITests.Features
 {
     [Binding]
-    public class OtherPageSearch
+    public class OtherPagesSearch
     {
         private readonly ScenarioContext _scenarioContext;
         private readonly IWebDriver _webDriver;
         private readonly Covid19 _covid19;
-        private readonly SearchResult _searchResult;
 
-        public OtherPageSearch(ScenarioContext scenarioContext)
+        public OtherPagesSearch(ScenarioContext scenarioContext)
         {
             _scenarioContext = scenarioContext;
             _webDriver = _scenarioContext.Get<IWebDriver>("WebDriver");
             _covid19 = new Covid19(_webDriver);
-            _searchResult = new SearchResult(_webDriver);
         }
 
         [Given(@"Covid page open")]
@@ -27,29 +25,28 @@ namespace Diia_UITests.Features
             _covid19.GoToCovid19Page();
         }
         
-        [When(@"I click on the search button")]
-        public void WhenIClickOnTheSearchButton()
+        [When(@"I click the search button activation in the header")]
+        public void WhenIClickTheSearchButtonActivationInTheHeader()
         {
             _covid19.ButtonSearchActivationClick();
         }
-
        
-        [When(@"I input ""(.*)"" in the search field")]
-        public void WhenIInputInTheSearchField(string input)
+        [When(@"I input '(.*)' in the search field in the header")]
+        public void WhenIInputInTheSearchFieldInTheHeader(string input)
         {
             _covid19.EnterDataForFormSearch(input);
         }
 
-        [When(@"I click the search button on other pages")]
-        public void WhenIClickTheSearchButtonOnOtherPeges()
+        [When(@"I click the search button in the header")]
+        public void WhenIClickTheSearchButtonInTheHeader()
         {
             _covid19.SearchButtonClick();
         }
 
-        [Then(@"I see a empty search result page whith the text ""(.*)""")]
-        public void ThenISeeAEmptySearchResultPageWhithText(string text)
+        [Then(@"The Covid page with title '(.*)' does not change")]
+        public void ThenTheCovidPageWithTitleDoesNotChange(string titleText)
         {
-            Assert.AreEqual(text, _searchResult.GetToEmptyMessageResult());
+            Assert.AreEqual(titleText, _covid19.GetTextFromPageCovid19Title());
         }
     }
 }
