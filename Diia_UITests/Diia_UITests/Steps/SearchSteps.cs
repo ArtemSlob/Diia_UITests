@@ -30,7 +30,7 @@ namespace Diia_UITests.Steps
         [When(@"I input '(.*)' in the search field")]
         public void WhenIInputInTheSearchField(string input)
         {
-            _mainPage.EnterDataForSearch(input);
+            _mainPage.EnterDataInSearchField(input);
         }
 
         [When(@"I click the search button")]
@@ -42,19 +42,19 @@ namespace Diia_UITests.Steps
         [Then(@"The search result page whith text '(.*)' opens")]
         public void ThenTheSearchResultPageWhithTextOpens(string message)  
         {
-            Assert.IsTrue(_searchResult.GetToSeachResult(message));
+            Assert.IsTrue(_searchResult.GetSuccessfulSeachMessageText(message));
         }
 
         [Then(@"The empty search result page whith text '(.*)' opens")]
         public void ThenTheEmptySearchResultPageWhithTextOpens(string message)
         {
-            Assert.AreEqual(message, _searchResult.GetToEmptyMessageResult());
+            Assert.AreEqual(message, _searchResult.GetFailedSeachMessageText());
         }
 
         [Then(@"The page with title '(.*)' does not change")]
         public void ThenThePageWithTitleDoesNotChange(string titleText)
         {
-            Assert.AreEqual(titleText, _mainPage.GetTextFromHeaderTitle());
+            Assert.AreEqual(titleText, _mainPage.GetTextFromPageTitle());
         }
     }
 }

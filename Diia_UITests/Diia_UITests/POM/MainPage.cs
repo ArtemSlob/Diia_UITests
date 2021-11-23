@@ -4,7 +4,6 @@ using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
 using System;
-using System.Threading;
 
 namespace Diia_UITests.POM
 {
@@ -27,14 +26,13 @@ namespace Diia_UITests.POM
         private readonly By _servicesHeaderMenuLinks = By.CssSelector("div[id='menu-sub-1'] [class='menu-sub_list-item diia-animated']>a");
         private readonly By _searchField = By.CssSelector("[class='input form-search_input']");
         private readonly By _searchButton = By.CssSelector("[class='btn btn_search-main']");
-        private readonly By _headerTitle = By.CssSelector("[class='header_title']");
         private readonly By _pageTitle = By.CssSelector("h1");
         private readonly By _chatbotButton = By.CssSelector("[id='chatbot_btn']");
         private readonly By _headerMenuLinksList = By.CssSelector("ul[class='menu_list']>li");
         private readonly By _swiperNextButton = By.CssSelector("[id='gromadyanam'] [class='swiper_services-btn-next swiper-btn-next']");
         private readonly By _swiperPreviousButton = By.CssSelector("[id='gromadyanam'] [class='swiper_services-btn-prev swiper-btn-prev']");
         private readonly By _popularServicesBlocks = By.CssSelector("[id='gromadyanam'] [class^='swiper-slide swiper_services-slide']");
-        private readonly By _popularServicesButton = By.CssSelector("[class='swiper_services-slide-content']>a");
+        private readonly By _popularServicesLink = By.CssSelector("[class='swiper_services-slide-content']>a");
         private readonly By _cookiesCloseButton = By.CssSelector("[class='cookies-1_close']");
         private readonly By _popularServicesBusinessTab = By.CssSelector("[id='biznesu-tab']");
         private readonly By _popularServicesGromadyanamTab = By.CssSelector("[id='gromadyanam-tab']");
@@ -45,10 +43,8 @@ namespace Diia_UITests.POM
             return this;
         }
 
-        public void ClickOnHeaderMenuLink(string linkText)
-        {
+        public void ClickOnHeaderMenuLink(string linkText) =>
             _helper.ClickOnLinkByText(linkText, _headerMenuLinksList);
-        }
 
         public void ClickOnServicesHeaderMenuLink(string linkText)
         {
@@ -56,93 +52,49 @@ namespace Diia_UITests.POM
             _helper.ClickOnLinkByText(linkText, _servicesHeaderMenuLinks);
         }
 
-        public void ClickOnServicesHeaderMenuFirstLink()
-        {
-            _webDriver.FindElements(_servicesHeaderMenuDropDownLink)[0].Click();
-        }
-
-        public void ClickOnServicesHeaderMenuDropDownLink()
-        {
+        public void ClickOnServicesHeaderMenuDropDownLink() =>
             _webDriver.FindElement(_servicesHeaderMenuDropDownLink).Click();
-        }
 
-        public string GetTextFromServicesHeaderMenuFirstLink()
-        {
-            return _webDriver.FindElements(_servicesHeaderMenuDropDownLink)[0].Text;
-        }
-
-        public void EnterDataForSearch(string input)
-        {
+        public void EnterDataInSearchField(string input) =>
             _webDriver.FindElement(_searchField).SendKeys(input);
-        }
 
-        public void SearchButtonClick()
-        {
+        public void SearchButtonClick() =>
             _webDriver.FindElement(_searchButton).Click();
-        }
 
-        public string GetTextFromHeaderTitle()
-        {
-            return _webDriver.FindElement(_headerTitle).Text;
-        }
+        public string GetTextFromPageTitle() =>
+            _webDriver.FindElement(_pageTitle).Text;
 
-        public string GetTextFromPageTitle()
-        {
-            return _webDriver.FindElement(_pageTitle).Text;
-        }
-
-        public void ClickOnChatbotButtonSection()
-        {
+        public void ClickOnChatbotButtonSection() =>
             _action.MoveToElement(_webDriver.FindElement(_chatbotButton)).Click().Perform();
-        }
 
-        public bool CheckActivenessOfHeaderMenu()
-        {
-            return _webDriver.FindElement(_servicesHeaderMenuDropDownLink).GetAttribute("class").Contains("active");
-        }
+        public bool CheckActivenessOfHeaderMenu() =>
+            _webDriver.FindElement(_servicesHeaderMenuDropDownLink).GetAttribute("class").Contains("active");
 
-        public void ClickOnSwiperNextButton()
-        {
+        public void ClickOnSwiperNextButton() =>
             _webDriver.FindElement(_swiperNextButton).Click();
-        }
 
-        public void ClickOnSwiperPreviousButton()
-        {
+        public void ClickOnSwiperPreviousButton() =>
             _webDriver.FindElement(_swiperPreviousButton).Click();
-        }
 
-        public bool CheckActivenessOfFirstPopularServiceBlock()
-        {
-            return _webDriver.FindElements(_popularServicesBlocks)[0].GetAttribute("class").Contains("active");
-        }
+        public bool CheckActivenessOfFirstPopularServiceContainer() =>
+            _webDriver.FindElements(_popularServicesBlocks)[0].GetAttribute("class").Contains("active");
 
-        public void ClickOnCovid19InPopularService(string linkText)
-        {
-            _helper.ClickOnLinkByText(linkText, _popularServicesButton);
-        }
-        public void ClickOnPopularServicesGromadyanamTab()
-        {
+        public void ClickOnPopularService(string linkText) =>
+            _helper.ClickOnLinkByText(linkText, _popularServicesLink);
+
+        public void ClickOnPopularServicesGromadyanamTab() =>
             _webDriver.FindElement(_popularServicesGromadyanamTab).Click();
-        }
 
-        public void ClickOnPopularServicesBusinessTab()
-        {
+        public void ClickOnPopularServicesBusinessTab() =>
             _webDriver.FindElement(_popularServicesBusinessTab).Click();
-        }
 
-        public bool CheckActivenessOfMenuGromadianam()
-        {
-            return _webDriver.FindElement(_popularServicesGromadyanamTab).GetAttribute("class").Contains("active");
-        }
+        public bool CheckActivenessOfMenuGromadianam() =>
+            _webDriver.FindElement(_popularServicesGromadyanamTab).GetAttribute("class").Contains("active");
 
-        public bool CheckActivenessOfMenuBusiness()
-        {
-            return _webDriver.FindElement(_popularServicesBusinessTab).GetAttribute("class").Contains("active");
-        }
+        public bool CheckActivenessOfMenuBusiness() =>
+            _webDriver.FindElement(_popularServicesBusinessTab).GetAttribute("class").Contains("active");
 
-        public void ClickOnCookiesCloseButton()
-        {
+        public void ClickOnCookiesCloseButton() =>
             _webDriver.FindElement(_cookiesCloseButton).Click();
-        }
     }
 }

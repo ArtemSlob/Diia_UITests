@@ -28,19 +28,19 @@ namespace Diia_UITests.Features
         [When(@"I click the search button activation in the header")]
         public void WhenIClickTheSearchButtonActivationInTheHeader()
         {
-            _covid19.ButtonSearchActivationClick();
+            _covid19.ClickSearchActivationButton();
         }
        
         [When(@"I input '(.*)' in the search field in the header")]
         public void WhenIInputInTheSearchFieldInTheHeader(string input)
         {
-            _covid19.EnterDataForFormSearch(input);
+            _covid19.EnterDataInSearchField(input);
         }
 
         [When(@"I click the search button in the header")]
         public void WhenIClickTheSearchButtonInTheHeader()
         {
-            _covid19.SearchButtonClick();
+            _covid19.ClickSearchButton();
         }
 
         [Then(@"The Covid page with title '(.*)' does not change")]

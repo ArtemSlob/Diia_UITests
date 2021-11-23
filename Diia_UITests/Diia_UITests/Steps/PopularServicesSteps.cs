@@ -36,7 +36,7 @@ namespace Diia_UITests.Steps
         [Then(@"The popular services moved by one position right")]
         public void ThenThePopularServicesMovedByOnePositionRight()
         {
-            Assert.IsTrue(!_mainPage.CheckActivenessOfFirstPopularServiceBlock());
+            Assert.IsTrue(!_mainPage.CheckActivenessOfFirstPopularServiceContainer());
         }
 
         [When(@"I click on the swiper button previous")]
@@ -48,13 +48,13 @@ namespace Diia_UITests.Steps
         [Then(@"The popular services moved by one position left")]
         public void ThenThePopularServicesMovedByOnePositionLeft()
         {
-            Assert.IsTrue(_mainPage.CheckActivenessOfFirstPopularServiceBlock());
+            Assert.IsTrue(_mainPage.CheckActivenessOfFirstPopularServiceContainer());
         }
 
         [When(@"I click the service '(.*)' in the popular service module")]
         public void WhenIClickTheServiceInThePopularServiceModule(string serviceName)
         {
-            _mainPage.ClickOnCovid19InPopularService(serviceName);
+            _mainPage.ClickOnPopularService(serviceName);
         }
 
         [Then(@"The Covid page with title '(.*)' opens")]
