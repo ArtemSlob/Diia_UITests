@@ -45,11 +45,13 @@ namespace Diia_UITests.Steps
             Assert.IsTrue(_mainPage.CheckActivenessOfFirstPopularServiceBlock());
         }
 
-        [When(@"I click the covid service in the item field")]
-        public void WhenIClickTheItemInTheItemField()
+        [When(@"I click the service '(.*)' in the item field")]
+        public void WhenIClickTheServiceInTheItemField(string serviceName)
         {
-            _mainPage.ClickOnCovid19InPopularService();
+            _mainPage.ClickOnCookiesCloseButton();
+            _mainPage.ClickOnCovid19InPopularService(serviceName);
         }
+
 
         [Then(@"A page will open with the title '(.*)'")]
         public void ThenAPageWillOpenWithTheTitle(string text)

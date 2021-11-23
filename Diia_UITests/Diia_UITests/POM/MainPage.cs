@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using Diia_UITests.Helpers;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
@@ -12,12 +13,14 @@ namespace Diia_UITests.POM
         private readonly IWebDriver _webDriver;
         private readonly WebDriverWait _wait;
         private readonly Actions _action;
+        private readonly Helper _helper;
 
         public MainPage(IWebDriver webDriver)
         {
             _webDriver = webDriver;
             _wait = new WebDriverWait(_webDriver, new TimeSpan(0, 0, 20));
             _action = new Actions(_webDriver);
+            _helper = new Helper(_webDriver);
         }
 
         private readonly By _servicesHeaderMenuDropDownLink = By.CssSelector("[data-menu-target='menu-sub-1']");
@@ -34,6 +37,7 @@ namespace Diia_UITests.POM
         private readonly By _popularServicesButton = By.CssSelector("[class='swiper_services-slide-content']>a");
         private readonly By _buttonGromadyanamActiv = By.CssSelector("[class='nav-link active']");
         private readonly By _buttunBusinessActiv = By.CssSelector("[class='nav-link active']");
+        private readonly By _cookiesCloseButton = By.CssSelector("[class='cookies-1_close']");
 
         public MainPage GoToMainPage()
         {
@@ -43,27 +47,13 @@ namespace Diia_UITests.POM
 
         public void ClickOnHeaderMenuLink(string linkText)
         {
-            foreach (IWebElement link in _webDriver.FindElements(_headerMenuLinksList))
-            {
-                if (link.Text == linkText)
-                {
-                    link.Click();
-                    break;
-                }
-            }
+            _helper.ClickOnLinkByText(linkText, _headerMenuLinksList);
         }
 
         public void ClickOnServicesHeaderMenuLink(string linkText)
         {
             _wait.Until(ExpectedConditions.ElementToBeClickable(_servicesHeaderMenuLinks));
-            foreach (IWebElement link in _webDriver.FindElements(_servicesHeaderMenuLinks))
-            {
-                if (link.Text == linkText)
-                {
-                    link.Click();
-                    break;
-                }
-            }
+            _helper.ClickOnLinkByText(linkText, _servicesHeaderMenuLinks);
         }
 
         public void ClickOnServicesHeaderMenuFirstLink()
@@ -81,20 +71,14 @@ namespace Diia_UITests.POM
             return _webDriver.FindElements(_servicesHeaderMenuDropDownLink)[0].Text;
         }
 
-        public MainPage EnterDataForSearch(string input)
+        public void EnterDataForSearch(string input)
         {
-            _webDriver
-                .FindElement(_searchField)
-                .SendKeys(input);
-            return this;
+            _webDriver.FindElement(_searchField).SendKeys(input);
         }
 
-        public MainPage SearchButtonClick()
+        public void SearchButtonClick()
         {
-            _webDriver
-                .FindElement(_searchButton)
-                .Click();
-            return this;
+            _webDriver.FindElement(_searchButton).Click();
         }
 
         public string GetTextFromHeaderTitle()
@@ -132,9 +116,9 @@ namespace Diia_UITests.POM
             return _webDriver.FindElements(_popularServicesBlocks)[0].GetAttribute("class").Contains("active");
         }
 
-        public void ClickOnCovid19InPopularService()
+        public void ClickOnCovid19InPopularService(string linkText)
         {
-            _webDriver.FindElements(_popularServicesButton)[0].Click();
+            _helper.ClickOnLinkByText(linkText, _popularServicesButton);
         }
 
         public string CheckActivenessOfMenuGromadianam()
@@ -145,6 +129,11 @@ namespace Diia_UITests.POM
         public string CheckActivenessOfMenuBusiness()
         {
             return _webDriver.FindElement(_buttunBusinessActiv).GetAttribute("class").Contains("active") ? "active" : "inactive";
+        }
+
+        public void ClickOnCookiesCloseButton()
+        {
+            _webDriver.FindElement(_cookiesCloseButton).Click();
         }
     }
 }

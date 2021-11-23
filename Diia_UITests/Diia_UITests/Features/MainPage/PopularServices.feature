@@ -21,7 +21,7 @@ Scenario: Check swipe left in the popular services module by clicking the swiper
 
 @MainPage @PopularServices
 Scenario: Check page opening when clicking on an element
-	When I click the covid service in the item field
+	When I click the service 'COVID-сертифікат про вакцинацію' in the item field
 	Then A page will open with the title 'COVID-сертифікат про вакцинацію'
 
 @MainPage @PopularServices
