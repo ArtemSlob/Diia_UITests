@@ -3,6 +3,7 @@ using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
 using System;
+using System.Threading;
 
 namespace Diia_UITests.POM
 {
@@ -27,6 +28,9 @@ namespace Diia_UITests.POM
         private readonly By _pageTitle = By.CssSelector("h1");
         private readonly By _chatbotButton = By.CssSelector("[id='chatbot_btn']");
         private readonly By _headerMenuLinksList = By.CssSelector("ul[class='menu_list']>li");
+        private readonly By _swiperNextButton = By.CssSelector("[id='gromadyanam'] [class='swiper_services-btn-next swiper-btn-next']");
+        private readonly By _swiperPreviousButton = By.CssSelector("[id='gromadyanam'] [class='swiper_services-btn-prev swiper-btn-prev']");
+        private readonly By _popularServicesBlocks = By.CssSelector("[id='gromadyanam'] [class^='swiper-slide swiper_services-slide']");
 
         public MainPage GoToMainPage()
         {
@@ -108,6 +112,21 @@ namespace Diia_UITests.POM
         public string CheckActivenessOfMenu()
         {
             return _webDriver.FindElement(_servicesHeaderMenuDropDownLink).GetAttribute("class").Contains("active") ? "active" : "inactive";
+        }
+
+        public void ClickOnSwiperNextButton()
+        {
+            _webDriver.FindElement(_swiperNextButton).Click();
+        }
+
+        public void ClickOnSwiperPreviousButton()
+        {
+            _webDriver.FindElement(_swiperPreviousButton).Click();
+        }
+
+        public bool CheckActivenessOfFirstPopularServiceBlock()
+        {
+            return _webDriver.FindElements(_popularServicesBlocks)[0].GetAttribute("class").Contains("active");
         }
     }
 }
